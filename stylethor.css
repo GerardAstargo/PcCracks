@@ -49,6 +49,7 @@ body {
 .desc {
     margin: .3rem 0;
     color: red;
+    text-transform: uppercase;
 }
 .boton {
     border: none;
