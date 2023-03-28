@@ -136,7 +136,7 @@ h2::after{
 }
 
 .right ul li a:hover {
-    background-color: rgb(89, 9, 143);
+    background-color: rgb(255, 5, 5);
     border-radius: 7px;
     color: rgb(255, 255, 255);
 }

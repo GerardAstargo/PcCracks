@@ -69,10 +69,12 @@ header{
     color: black; /*variable*/
     font-size: 18px; /*variable*/
     position: relative;
+    
 }
 
 .menu_opciones nav ul li a:hover{
-    color: var(--color_botones_primarios)
+    color: var(--color_botones_primarios);
+
 }
 
 .btn_login{
