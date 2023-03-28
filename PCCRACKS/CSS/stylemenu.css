@@ -16,10 +16,12 @@ body{
 }
 
 header{
+    background-color: #ffffff;
     width: 100%;
-    height: 0px;
+    height: 100px;
     position: fixed;
     z-index: 100;
+    top: 0px;
 }
 .menu_navegacion{
     
@@ -111,7 +113,7 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1210px){
+@media screen and (max-width: 1200px){
     .toggle {
         display: inline-block;
     }
@@ -227,9 +229,13 @@ header{
     transform: translateY(-9px);
 }
 
+.swiper-swiper-hero{
+    max-width: 1200px;
+}
 .swiper-hero {
     width: 100%;
     max-width: 1600px;
+    
   }
 
   .swiper-hero .swiper-slide {
@@ -290,4 +296,3 @@ header{
   .swiper-hero .swiper-pagination-bullet-active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
   }
-</style>
