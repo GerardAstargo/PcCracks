@@ -2,7 +2,8 @@
 
 * {
 
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
     font-family: 'poppins', sans-serif;
     
@@ -18,55 +19,55 @@ body{
 
 header{
     background-color: #ffffff;
-    width: 98.5%;
-    height: 100px;
+    width: 100%;
+    height: 70px;
     position: fixed;
     z-index: 100;
     top: 0px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    
 }
 .menu_navegacion{
-    
     height: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0px 20px;
-    max-width: 1200px;
+    max-width: 1700px;
+    
 }
 
 .logo{
+    margin-top: 20px;
     display: flex;
-    align-items: right;
+    align-items: center;
     position: relative;
     z-index: -1;
 }
 .logo img{
-    width: 200px;
+    width: 180px;
 }
 
 .menu_opciones{
     display: flex;
     align-items: center;
-    
+    margin: 0px 200px;
 }
-.menu_opciones nav{
-    margin: 0px 20px;
-}
+
 
 .menu_opciones nav ul{
     display: flex;
+
 }
 
 .menu_opciones nav ul li{
     list-style: none;
-    margin: 20px 16px;
+    margin: 15px 20px;
 }
 
 .menu_opciones nav ul li a{
     color: black; /*variable*/
-    font-size: 16px; /*variable*/
+    font-size: 18px; /*variable*/
     position: relative;
 }
 
@@ -81,7 +82,7 @@ header{
     border: 2px solid var(--color_botones_primarios); /*variable*/
     border-radius: 10px;
     font-weight: 500;
-    margin: 0px 20px;
+    margin: 0px 220px;
     transition: all 300ms;
 }
 
@@ -90,21 +91,22 @@ header{
     background:var(--color_botones_primarios)
 }
 
-.menu_opciones .social_media{
-    margin: 0px 10px;
-}
 
-.menu_opciones .social_media a{
-    margin: 0px 10px;
+.menu_opciones .social_media{
+    margin: 10px -120px;
 }
 
 .menu_opciones .social_media img{
     width: 30px;
+    
 }
 
+.abrirmenu{
+    display: none;
+}
 .toggle {
     color: #000000;
-    margin-right: 20px;
+    margin-left: auto;
     font-size: 30px;
     transform: rotate(90deg);
     cursor: pointer;
@@ -116,60 +118,47 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 800px){
     .toggle {
         display: inline-block;
     }
 
-    .menu_opciones {
+    .menu_opciones{
         position: absolute;
         display: flex;
         flex-direction: column;
-        background: #ffffff;
+        background: #c0c0c0;
         text-align: center;
-        height: calc(100vh - 10px);
+        overflow: hidden;
+        height: calc(100vh - 80px);
         width: 100%;
-        z-index: -3;
+        z-index: -1;
         top: -100vh;
-        transition: .3s;
+        transition: .5s;
     }
-    .menu_opciones .opciones {
-        background: #777777;
-        position: initial;
-        width: -10px 200px;
-        object-fit: contain;
-    }
-    .menu_opciones .opciones nav ul li a {
+    .menu_opciones{
         flex-direction: column;
+        align-items: center;
     }
-    .menu_opciones .social_media{
-        position: flex;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        z-index: -3;
-        top: 0vh;
-        transition: .3s;
-    }
+    .opciones{
+        flex-direction: column;
 
+    }
+    .opciones a{
+        color: #ff7b00;
+    }
     .active {
-
         top: 80px;
     }
-
-
+    
 }
 
-.swiper swiper-hero{
-    padding-top: 100px;
-    max-width: 1600px;
-}
+
 .swiper-hero {
     width: 90%;
-    max-width: 1600px;
+    max-width: 1800px;
     position: fixed;
-    top: 70px;
+    top: 50px;
     
   }
 
