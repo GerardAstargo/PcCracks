@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> PCCRACKS Menu </title>
     <link rel="stylesheet" href="css/stylemenu.css">
+    <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logo.png">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -52,8 +53,71 @@
             </div>
         </div>
     </header>
-    
+
+    <img src="" alt="">
     <main>
+        <div class="swiper swiper-hero">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="fotos/slider/apertura.png" alt="">
+          </div>
+          <div class="swiper-slide"> 
+            <img src="fotos/slider/descuentos.png" alt="">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+  
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+  
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+  
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <script>
+        const swiper = new Swiper(".swiper-hero", {
+          // Optional parameters
+          // slidesPerView: "auto",
+          // spaceBetween: 15,
+          // slidesPerGroupAuto: true,
+  
+          direction: "horizontal",
+          loop: true,
+          // allowTouchMove: true,
+          // effect: "cube",
+          autoplay: {
+            delay: 10000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+          },
+  
+          // If we need pagination
+          pagination: {
+            el: ".swiper-pagination",
+            // type: "progressbar"
+            clickable: true,
+            // dynamicBullets: true
+          },
+  
+          // Navigation arrows
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+  
+          // And if we need scrollbar
+          // scrollbar: {
+          //   el: ".swiper-scrollbar",
+          //   draggable: true,
+          // },
+        });
+      </script>
+    </div>
         <div class="portada">
             <h1 class="titulo">Menu Rapido</h1>
             <div class="main-container">
@@ -109,73 +173,7 @@
             </div>
         </div>
     </main>
-    <div class="swiper-swiper-hero">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img
-              src="fotos/slider/apertura.png"
-              alt=""
-            />
-          </div>
-          <div class="swiper-slide">
-            <img
-              src="fotos/slider/descuentos.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-  
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-  
-        <!-- If we need scrollbar -->
-        <!-- <div class="swiper-scrollbar"></div> -->
-      </div>
-  
-      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-      <script>
-        const swiper = new Swiper(".swiper-hero", {
-          // Optional parameters
-          // slidesPerView: "auto",
-          // spaceBetween: 15,
-          // slidesPerGroupAuto: true,
-  
-          direction: "horizontal",
-          loop: true,
-          // allowTouchMove: true,
-          // effect: "cube",
-          autoplay: {
-            delay: 10000,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false,
-          },
-  
-          // If we need pagination
-          pagination: {
-            el: ".swiper-pagination",
-            // type: "progressbar"
-            clickable: true,
-            // dynamicBullets: true
-          },
-  
-          // Navigation arrows
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-  
-          // And if we need scrollbar
-          // scrollbar: {
-          //   el: ".swiper-scrollbar",
-          //   draggable: true,
-          // },
-        });
-      </script>
+    
     <script src="main.js"></script>
 </body>
 
