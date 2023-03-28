@@ -22,18 +22,19 @@ header{
     z-index: 100;
 }
 .menu_navegacion{
-    max-width: 1300px;
+    
     height: 100%;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    max-width: 1200px;
 }
 
 .logo{
     display: flex;
-    align-items: center;
+    align-items: right;
     position: relative;
     z-index: -1;
 }
@@ -113,9 +114,6 @@ header{
 @media screen and (max-width: 1210px){
     .toggle {
         display: inline-block;
-        margin: auto;
-        display: flex;
-        z-index: -1;
     }
 
     .menu_opciones {
@@ -229,24 +227,67 @@ header{
     transform: translateY(-9px);
 }
 
-.drop{
-    overflow: hidden;
-    list-style: none;
-    position: absolute;
-    padding: 0;
+.swiper-hero {
     width: 100%;
-    left: 0;
-    top: 48px;
-    div{
-        @include transform: (translate: (0,-100%));
-        @include transition (all 0.5s 0.1s);
-        position: relative;
+    max-width: 1600px;
+  }
+
+  .swiper-hero .swiper-slide {
+    width: 250px;
+  }
+
+  .swiper-hero img {
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 1024px) {
+    .swiper-hero img {
+      height: 344px;
     }
-    li{
-        display: block;
-        padding: 0;
-        width: 100%;
-        background: black !important ;
-        
-    }
-}
+  }
+
+  .swiper-hero .swiper-button-prev,
+  .swiper-hero .swiper-button-next {
+    --swiper-navigation-size: 20px;
+    background-color: white;
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .swiper-hero .swiper-button-prev {
+    border-radius: 0 65px 65px 0;
+    left: -10px;
+  }
+  .swiper-hero .swiper-button-next {
+    border-radius: 65px 0 0 65px;
+    right: -10px;
+  }
+
+  .swiper-hero:hover .swiper-button-prev,
+  .swiper-hero:hover .swiper-button-next {
+    opacity: 1;
+  }
+
+  .swiper-hero .swiper-pagination {
+    --swiper-pagination-color: white;
+    --swiper-pagination-bullet-size: 6px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.25;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 2px;
+  }
+
+  .swiper-hero .swiper-pagination-bullet {
+    box-shadow: inset 0 0 0 1px #fff;
+  }
+
+  .swiper-hero .swiper-pagination-bullet-active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  }
+</style>
