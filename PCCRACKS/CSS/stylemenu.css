@@ -33,7 +33,7 @@ header{
     margin: auto;
     display: flex;
     padding: 0px 20px;
-    max-width: 1700px;
+    max-width: 1500px;
     
 }
 
@@ -51,7 +51,7 @@ header{
 .menu_opciones{
     display: flex;
     align-items: center;
-    margin: 0px 200px;
+    margin: 0px 100px;
 }
 
 
@@ -69,12 +69,10 @@ header{
     color: black; /*variable*/
     font-size: 18px; /*variable*/
     position: relative;
-    
 }
 
 .menu_opciones nav ul li a:hover{
-    color: var(--color_botones_primarios);
-
+    color: var(--color_botones_primarios)
 }
 
 .btn_login{
@@ -84,7 +82,7 @@ header{
     border: 2px solid var(--color_botones_primarios); /*variable*/
     border-radius: 10px;
     font-weight: 500;
-    margin: 0px 220px;
+    margin: 0px 120px;
     transition: all 300ms;
 }
 
@@ -95,7 +93,7 @@ header{
 
 
 .menu_opciones .social_media{
-    margin: 10px -120px;
+    margin: 10px -80px;
 }
 
 .menu_opciones .social_media img{
@@ -120,16 +118,17 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1450px){
     .toggle {
         display: inline-block;
     }
 
     .menu_opciones{
+        margin: 0px -20px;
         position: absolute;
         display: flex;
         flex-direction: column;
-        background: #c0c0c0;
+        background: #fffffff3;
         text-align: center;
         overflow: hidden;
         height: calc(100vh - 80px);
@@ -149,6 +148,15 @@ header{
     .opciones a{
         color: #ff7b00;
     }
+    .btn_login{
+        background:var(--color_botones_primarios);
+        color: #ffffff; 
+    }
+    
+    .btn_login:hover{
+        color: var(--color_botones_primarios);
+        background-color: #ffffff;
+    }
     .active {
         top: 80px;
     }
@@ -160,7 +168,7 @@ header{
     width: 90%;
     max-width: 1800px;
     position: fixed;
-    top: 50px;
+    top: 40px;
     
   }
 
@@ -176,9 +184,16 @@ header{
 
   @media (min-width: 1024px) {
     .swiper-hero img {
-      height: 355px;
+      height: 600px;
     }
   }
+  @media screen and (max-width: 600px){
+    .swiper-hero img{
+    width: 550px;
+    height: 205px;
+    
+        }
+    }
 
   .swiper-hero .swiper-button-prev,
   .swiper-hero .swiper-button-next {
@@ -310,4 +325,3 @@ header{
 .main-container .item-box:hover {
     transform: translateY(-9px);
 }
-
