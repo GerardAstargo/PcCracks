@@ -42,8 +42,9 @@ header{
     display: flex;
     align-items: center;
     position: relative;
-    z-index: -1;
+    z-index: 1;
 }
+
 .logo img{
     width: 180px;
 }
