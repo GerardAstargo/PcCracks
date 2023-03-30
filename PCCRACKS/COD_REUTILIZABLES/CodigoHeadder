@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    
+}
+:root{
+    --color_botones_primarios: #ff7b00;
+}
+
+
+body{
+    background: #ffffff;
+}
+
+header{
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    
+}
+.menu_navegacion{
+    height: 100%;
+    margin: auto;
+    display: flex;
+    padding: 0px 20px;
+    max-width: 1500px;
+    
+}
+
+.logo{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+}
+.logo img{
+    width: 180px;
+}
+
+.menu_opciones{
+    display: flex;
+    align-items: center;
+    margin: 0px 100px;
+}
+
+
+.menu_opciones nav ul{
+    display: flex;
+
+}
+
+.menu_opciones nav ul li{
+    list-style: none;
+    margin: 15px 20px;
+}
+
+.menu_opciones nav ul li a{
+    color: black; /*variable*/
+    font-size: 18px; /*variable*/
+    position: relative;
+}
+
+.menu_opciones nav ul li a:hover{
+    color: var(--color_botones_primarios)
+}
+
+.btn_login{
+    color: #000;
+    display: block;
+    padding: 8px 40px;
+    border: 2px solid var(--color_botones_primarios); /*variable*/
+    border-radius: 10px;
+    font-weight: 500;
+    margin: 0px 120px;
+    transition: all 300ms;
+}
+
+.btn_login:hover{
+    color: white;
+    background:var(--color_botones_primarios)
+}
+
+
+.menu_opciones .social_media{
+    margin: 10px -80px;
+}
+
+.menu_opciones .social_media img{
+    width: 30px;
+    
+}
+
+.abrirmenu{
+    display: none;
+}
+.toggle {
+    color: #000000;
+    margin-left: auto;
+    font-size: 30px;
+    transform: rotate(90deg);
+    cursor: pointer;
+    transition: .3s;
+    display: none;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1450px){
+    .toggle {
+        display: inline-block;
+    }
+
+    .menu_opciones{
+        margin: 0px -20px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background: #fffffff3;
+        text-align: center;
+        overflow: hidden;
+        height: calc(100vh - 80px);
+        width: 100%;
+        z-index: -1;
+        top: -100vh;
+        transition: .5s;
+    }
+    .menu_opciones{
+        flex-direction: column;
+        align-items: center;
+    }
+    .opciones{
+        flex-direction: column;
+
+    }
+    .opciones a{
+        color: #ff7b00;
+    }
+    .btn_login{
+        background:var(--color_botones_primarios);
+        color: #ffffff; 
+    }
+    
+    .btn_login:hover{
+        color: var(--color_botones_primarios);
+        background-color: #ffffff;
+    }
+    .active {
+        top: 80px;
+    }
+    
+}
