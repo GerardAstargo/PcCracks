@@ -119,7 +119,7 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1450px){
+@media screen and (max-width: 1350px){
     .toggle {
         display: inline-block;
     }
@@ -166,10 +166,10 @@ header{
 
 
 .swiper-hero {
-    width: 90%;
+    width: 100%;
     max-width: 1800px;
     position: fixed;
-    top: 40px;
+    top: -30px;
     
   }
 
