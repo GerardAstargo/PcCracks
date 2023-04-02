@@ -1,7 +1,7 @@
 const toggle = document.querySelector('.toggle')
 const toggle2 = document.querySelector('.toggle2')
 const links = document.querySelector('.menu_opciones')
-const links2 = document.querySelector('.li')
+const links2 = document.querySelector('navegacion')
 
 toggle.addEventListener('click', () => {
     toggle.classList.toggle('rotate')

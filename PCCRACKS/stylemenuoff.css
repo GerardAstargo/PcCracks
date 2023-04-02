@@ -117,15 +117,7 @@ header{
   display: none;
 }
 
-.toggle2 {
-  color: #000000;
-  margin-left: auto;
-  font-size: 30px;
-  transform: rotate(90deg);
-  cursor: pointer;
-  transition: .3s;
-  display: none;
-}
+
 
 .rotate {
   transform: rotate(180deg);
@@ -149,8 +141,6 @@ header{
       z-index: -1;
       top: -100vh;
       transition: .5s;
-  }
-  .menu_opciones{
       flex-direction: column;
       align-items: center;
   }
@@ -176,12 +166,23 @@ header{
   
 }
 
-@media screen and (max-height: 950px){
+.toggle2 {
+  color: var(--color_botones_primarios);
+  margin-left: 95%;
+  font-size: 30px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: .3s;
+  display: none;
+  
+}
+
+@media screen and (max-width: 1350px){
   .toggle2 {
       display: inline-block;
   }
-  .sidebar{
-    margin: 0px -20px;
+  .navegacion{
+    margin: -10px -20px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -193,6 +194,58 @@ header{
     z-index: -1;
     top: -100vh;
     transition: .5s;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navegacion ul{
+    list-style: none;
+  }
+  
+  .menu > li{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: #353535;
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li a:hover{
+    color: #CE7D35;
+    transition: all .3s;
+  }
+  
+  /* Submenu*/
+  
+  .submenu{
+    position: absolute;
+    background: #333333;
+    width: 120%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+  }
+  
+  .submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .active {
+    top: 10px;
   }
 }
 
@@ -389,7 +442,7 @@ header{
 
 
   section{
-    margin: 70px auto;
+    margin: 100px auto;
     width: 80%;
     display: flex;
     justify-content: space-around;
@@ -500,3 +553,54 @@ header{
     width: auto;
   }
   
+  .navegacion{
+    width: 1000px;
+    margin: 0px auto;
+    background: #ffffffb0;
+  }
+  
+  .navegacion ul{
+    list-style: none;
+  }
+  
+  .menu > li{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: #353535;
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li a:hover{
+    color: #CE7D35;
+    transition: all .3s;
+  }
+  
+  /* Submenu*/
+  
+  .submenu{
+    position: absolute;
+    background: #333333;
+    width: 120%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+  }
+  
+  .submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+  }
