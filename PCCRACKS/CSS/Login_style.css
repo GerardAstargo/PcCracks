@@ -22,6 +22,31 @@ body {
     margin-top: 1px;
     background-repeat: no-repeat;
 }
+
+@media (max-width: 767px){
+    .desktop {
+      display: none;
+    }
+    .tablet{
+      display: none;
+    }
+}
+@media (min-width: 767px) and (max-width: 990px){
+  .desktop{
+    display: none;
+  }
+  .celular{
+    display: none;
+  }
+}
+@media (min-width: 991px){
+    .tablet{
+      display:none
+    }
+    .celular{
+      display: none;
+    }
+}
   
   .ocean {
     height: 5%;
