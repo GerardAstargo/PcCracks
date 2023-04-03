@@ -11,7 +11,7 @@ html{
   min-height: 100vh;
 }
 body {
-    background:radial-gradient(ellipse at center, rgb(255, 255, 255) 0%, rgb(240, 168, 73) 35%, #0693f1 100%);
+    background:radial-gradient(ellipse at center, rgb(255, 255, 255) 0%, rgb(240, 168, 73) 35%, #073ae2 100%);
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
     display: flex;
