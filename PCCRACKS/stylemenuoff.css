@@ -163,24 +163,29 @@ header{
     }
     
 }
+.almacen{
+    width: 100%;
+}
 
 .nombretipo{
-
-    margin-top: 200px;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    background-color: #ff66002f;
 }
 .productos{
-    margin: 10% 40px;
+    margin: 2% 2%;
     justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
-    align-items: center;
+    
 }
 .card {
     margin: 20px 30px;
     position: relative;
     width: 320px;
     height: 480px;
-    background: #191919;
+    background: #5a5a5a;
     border-radius: 20px;
     overflow: hidden;
     
@@ -192,7 +197,7 @@ header{
     top: -50%;
     width: 100%;
     height: 100%;
-    background: #ffce00;
+    background: #ff7b00;
     transform: skewY(345deg);
     transition: 0.5s;
   }
@@ -203,13 +208,13 @@ header{
   }
   
   .card::after {
-    content: "CORSAIR";
+    content: "PCRACKS";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 6em;
-    color: rgba(0, 0, 0, 0.1);
+    font-size: 420%;
+    color: rgba(87, 87, 87, 0.925);
   }
   
   .card .imgBox {
@@ -221,18 +226,8 @@ header{
     padding-top: 20px;
     z-index: 1;
   }
-  /*
-  .card .imgBox img {
-      max-width: 100%;
-      
-      transition: .5s;
-  }
-  
-  .card:hover .imgBox img {
-      max-width: 50%;
-        
-  }
-  */
+
+
   .card .contentBox {
     position: relative;
     padding: 20px;
@@ -247,13 +242,22 @@ header{
     font-size: 18px;
     color: white;
     font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+
+  .card .contentBox h1 {
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    box-shadow:rgb(0, 0, 0)
   }
   
   .card .contentBox .price {
     font-size: 24px;
-    color: white;
+    color: rgb(21, 255, 0);
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -266,12 +270,19 @@ header{
     margin-top: 15px;
     color: #000000;
     text-decoration: none;
-    background: #ffce00;
+    background: #e7e7e7;
     border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: 0.5s;
+    transition: 0.3s;
   }
+
+  .card .contentBox .buy:hover{
+    color: white;
+    background:var(--color_botones_primarios)
+}
+
+
   
   .card:hover .contentBox .buy {
     top: 0;
@@ -279,7 +290,7 @@ header{
   }
   
   .mouse {
-    height: 300px;
+    height: 200px;
     width: auto;
   }
   
