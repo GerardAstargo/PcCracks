@@ -154,8 +154,8 @@ header{
     }
 
     .menu_opciones{
-        margin: -10px 0px;
-        position: absolute;
+        margin-top: -10px;
+        position: fixed;
         display: flex;
         flex-direction: column;
         background: #fffffff3;
@@ -286,7 +286,7 @@ header{
   
   .card .contentBox .price {
     font-size: 24px;
-    color: rgb(21, 255, 0);
+    color: var(--color_botones_primarios);
     font-weight: 700;
     letter-spacing: 1px;
   }
