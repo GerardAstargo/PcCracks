@@ -33,12 +33,13 @@ header{
     margin: auto;
     display: flex;
     padding: 0px 20px;
-    max-width: 1500px;
+    max-width: 100%;
     
 }
 
 .logo{
-    margin-top: 20px;
+    margin-left: 7%;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     position: relative;
@@ -52,7 +53,7 @@ header{
 .menu_opciones{
     display: flex;
     align-items: center;
-    margin: 0px 100px;
+    margin: 0px 5%;
 }
 
 
@@ -83,7 +84,7 @@ header{
     border: 2px solid var(--color_botones_primarios); /*variable*/
     border-radius: 10px;
     font-weight: 500;
-    margin: 0px 120px;
+    margin: 0px 3%;
     transition: all 300ms;
 }
 
@@ -93,8 +94,36 @@ header{
 }
 
 
+.box{
+    margin: 10px auto;
+    width: 300px;
+    height: 50px;
+  }
+
+  .container-1{
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .container-1 input#search{
+    width: 300px;
+    height: 50px;
+    background: #d8d8da;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #000000;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+
 .menu_opciones .social_media{
-    margin: 10px -80px;
+    margin: 10px 2%;
 }
 
 .menu_opciones .social_media img{
@@ -119,20 +148,20 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1350px){
+@media screen and (max-width: 1627px){
     .toggle {
         display: inline-block;
     }
 
     .menu_opciones{
-        margin: 0px -20px;
+        margin: -10px 0px;
         position: absolute;
         display: flex;
         flex-direction: column;
         background: #fffffff3;
         text-align: center;
         overflow: hidden;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 70px);
         width: 100%;
         z-index: -1;
         top: -100vh;
@@ -256,6 +285,7 @@ header{
     margin: 0 auto;
     flex-wrap: wrap;
     width: 90%;
+    z-index: 100px;
 }
 
 .main-container-img {
@@ -326,3 +356,89 @@ header{
 .main-container .item-box:hover {
     transform: translateY(-9px);
 }
+
+
+
+
+
+
+.contact-area {
+    text-align: center;
+    border-bottom: 1px solid #21262c;
+}
+
+
+.contact-content{
+    margin-top: 5%;
+}
+.contact-content p {
+    font-size: 15px;
+    margin: 30px 0 60px;
+    position: relative;
+}
+
+.contact-content p::after {
+    background: #353C46;
+    bottom: -30px;
+    content: "";
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+    width: 80%;
+}
+
+.contact-content h6 {
+    color: #8b9199;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.contact-content span {
+    color: #353c47;
+    margin: 0 10px;
+}
+
+.contact-social {
+    margin-top: 30px;
+}
+
+.contact-social > ul {
+    display: inline-flex;
+}
+
+.contact-social ul li a {
+    border: 1px solid #8b9199;
+    color: #8b9199;
+    display: inline-block;
+    height: 40px;
+    margin: 0 10px;
+    padding-top: 7px;
+    transition: all 0.4s ease 0s;
+    width: 40px;
+}
+
+.contact-social ul li a:hover {
+    border: 1px solid #FAB702;
+    color: #FAB702;
+}
+
+.contact-content img {
+    max-width: 210px;
+}
+
+section, footer {
+    background: #1A1E25;
+    color: #868c96;
+}
+
+footer p {
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer img {
+    width: 44px;
+}
+  
