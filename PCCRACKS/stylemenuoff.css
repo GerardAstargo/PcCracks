@@ -123,7 +123,7 @@ header{
 
 
 .menu_opciones .social_media{
-    margin: 10px 1%;
+    margin: 10px 0%;
 }
 
 .menu_opciones .social_media img{
@@ -152,10 +152,19 @@ header{
     .toggle {
         display: inline-block;
     }
+    .logo{
+        margin-left: 0%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    
+    }
 
     .menu_opciones{
-        margin-top: -10px;
-        position: fixed;
+        margin-left: -5%;
+        margin: -10px 0px;
+        position: absolute;
         display: flex;
         flex-direction: column;
         background: #fffffff3;
@@ -166,11 +175,9 @@ header{
         z-index: -1;
         top: -100vh;
         transition: .5s;
-    }
-    .menu_opciones{
-        flex-direction: column;
         align-items: center;
     }
+
     .opciones{
         flex-direction: column;
 
@@ -192,6 +199,7 @@ header{
     }
     
 }
+
 .almacen{
     width: 100%;
 }
