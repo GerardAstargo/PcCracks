@@ -88,7 +88,6 @@ const elts = {
 	text2: document.getElementById("text2")
 };
 
-// The strings to morph between. You can change these to anything you want!
 const texts = [
 	"Comprar",
 	"Con",
@@ -98,8 +97,8 @@ const texts = [
 ];
 
 // Controls the speed of morphing.
-const morphTime = 1;
-const cooldownTime = 0.25;
+const morphTime = 0.4;
+const cooldownTime = 1;
 
 let textIndex = texts.length - 1;
 let time = new Date();
