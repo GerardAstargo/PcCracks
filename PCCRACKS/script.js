@@ -3,7 +3,7 @@ new Vue({
   el: "#app",
   data() {
     return {
-      currentCardBackground: Math.floor(Math.random()* 25 + 1), // just for fun :D
+      currentCardBackground: Math.floor(Math.random()* 25 + 1), 
       cardName: "",
       cardNumber: "",
       cardMonth: "",
@@ -40,7 +40,7 @@ new Vue({
       re = new RegExp('^9792')
       if (number.match(re) != null) return 'troy'
 
-      return "visa"; // default type
+      return "visa"; 
     },
 		generateCardNumberMask () {
 			return this.getCardType === "amex" ? this.amexCardMask : this.otherCardMask;
@@ -96,7 +96,7 @@ const texts = [
 	"Seguro",
 ];
 
-// Controls the speed of morphing.
+
 const morphTime = 0.4;
 const cooldownTime = 1;
 
@@ -122,9 +122,9 @@ function doMorph() {
 	setMorph(fraction);
 }
 
-// A lot of the magic happens here, this is what applies the blur filter to the text.
+
 function setMorph(fraction) {
-	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+
 	
 	elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
 	elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -147,7 +147,7 @@ function doCooldown() {
 	elts.text1.style.opacity = "0%";
 }
 
-// Animation loop, which is called every frame.
+
 function animate() {
 	requestAnimationFrame(animate);
 	
@@ -169,5 +169,5 @@ function animate() {
 	}
 }
 
-// Start the animation.
+
 animate();

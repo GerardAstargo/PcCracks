@@ -13,9 +13,6 @@
 }
 
 
-body{
-    background: #ffffff;
-}
 
 header{
     background-color: #ffffff;
@@ -415,3 +412,151 @@ footer img {
     width: 44px;
 }
   
+.ad{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+
+}
+.descpro{
+    margin-top:-4%;
+    display: flex;
+    width: 850px;
+    border-radius: 12px;
+    position: relative;
+    height: 50vh;
+  }
+
+
+  
+  .descpro .box.one{
+    padding: 35px 5px 0px 35px;
+  }
+  .box.one .details .topic{
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .box.one .details p{
+    color: #737373;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .box.one .rating{
+    color: var(--color_botones_primarios);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .box.one .price-box{
+    margin-top: 16px;
+  }
+  .box.one .discount{
+    font-size: 20px;
+    margin: 10px 0 0 12px;
+    position: relative;
+    color: #737373;
+  }
+  .box.one .discount:before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background: #737373;
+    top: 50%;
+    left: -8px;
+  }
+  .box.one .price{
+    color: var(--color_botones_primarios);
+    font-size: 30px;
+  }
+  .box.one .button1{
+    margin-top: 55px;
+  }
+  .box.one .button1 button{
+    outline: none;
+    border:none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--color_botones_primarios);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .button1 button:hover{
+    transform: scale(0.98);
+  }
+  .descpro .box.two .image{
+    position: relative;
+    right: 0
+    top: 0;
+    height: 340px;
+    width: 430px;
+  }
+  .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  .descpro .box.two .image-box{
+    position: relative;
+    text-align: right;
+    right: 0;
+    bottom: 27px;
+  }
+  .box.two .image-box .info{
+    margin: 0 35px 0 0;
+  }
+  .box.two .info .brand{
+   font-size: 30px;
+   font-weight: 600;
+   color: var(--color_botones_primarios);
+  }
+  .box.two .info .name{
+   font-size: 20px;
+   font-weight: 500;
+   color: black;
+  }
+  .box.two .info .shipping{
+   font-size: 14px;
+   font-weight: 400;
+   color: #000;
+  }
+  .box.two .button2{
+    margin: 17px 0;
+  }
+  .button2 button{
+    outline: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 8px 17px;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+.stock{
+    font-size: 15px;
+    font-weight: 600;
+    color: green;
+}
+
+.sinstock{
+    font-size: 15px;
+    font-weight: 600;
+    color: red;
+}
+
+.mantenimiento{
+    text-align: center;
+    position: static;
+    top: 50%;
+    font-size: 50px;
+    color: var(--color_botones_primarios);
+    z-index: 100;
+}
