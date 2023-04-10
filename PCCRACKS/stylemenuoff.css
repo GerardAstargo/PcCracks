@@ -560,3 +560,6 @@ footer img {
     color: var(--color_botones_primarios);
     z-index: 100;
 }
+.mantenimiento h4{
+    color: green;
+}
