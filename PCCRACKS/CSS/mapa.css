@@ -277,25 +277,26 @@ footer img {
 .map{
     text-align: right;
     margin-top: 0px;
-    position: relative;
+    position:relative;
     top: 85px;
     right: 50px;
+    z-index: -1;
 }
 .mensaje_mapa{
     position:absolute;
-    text-align: center;
+    text-align:center;
     top: 130px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:22px;
-    left: 150px;
-    
+    font-size:25px;
+    left: 60px;
+    z-index: 1;
     
 }
 form {
     position:absolute;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 35%;
     margin: 0 auto;
     right: 1100px;
     left: 150px;
@@ -330,3 +331,32 @@ form {
     margin-top: 1rem;
     cursor: pointer;
   }
+
+  @media (max-width: 767px){
+    .desktop {
+      display: none;
+    }
+    .tablet{
+      display: none;
+    }
+}
+@media (min-width: 767px) and (max-width: 990px){
+  .desktop{
+    display: none;
+  }
+  .celular{
+    display: none;
+  }
+}
+@media (min-width: 991px){
+    .tablet{
+      display:none
+    }
+    .celular{
+      display: none;
+    }
+}
+
+.bodi{
+    flex-direction: column;
+}
