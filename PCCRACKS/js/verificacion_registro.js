@@ -1,5 +1,5 @@
-$(document).click(function(){
-    $("register").submit(function(e){
+$(document).ready(function(){
+    $("#register").submit(function(e){
         e.preventDefault();
         var nombre = $("#name").val();
         var correo = $("#number").val();
