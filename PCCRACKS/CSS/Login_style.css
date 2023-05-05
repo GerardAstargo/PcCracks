@@ -6,7 +6,11 @@
     text-decoration: none;
     font-family: 'poppins', sans-serif;
 }
-  
+
+:root{
+  --color_botones_primarios: #ff7b00;
+}
+
 html{
   min-height: 100vh;
 }
@@ -314,6 +318,22 @@ body {
   
   .container.right-panel-active .overlay-right {
     transform: translateY(20%);
+  }
+
+  .btn_admin{
+    color: #ffffff;
+    padding: 8px 30px;
+    border: 2px solid black; /*variable*/
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 300ms;
+    white-space: nowrap;
+    background-color: var(--color_botones_primarios);
+  }
+
+  .btn_admin:hover{
+    color: #ff8800;
+    background:white;
   }
 
 

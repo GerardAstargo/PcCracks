@@ -26,7 +26,12 @@ formulario.addEventListener('submit',e =>{
     }
 
     if (celular.value.length < 8 || celular.value.length > 12){
-        msjMostrar = msjMostrar + "El número debe tener los 12 digitos incluyendo el simbolo +";
+        msjMostrar = msjMostrar + " El número debe tener los 12 digitos incluyendo el simbolo +";
+        enviar = true;
+    }
+
+    if(clave.value.length < 5 || clave.value.length > 15){
+        msjMostrar = msjMostrar + "La contraseña debe tener entre 5 y 15 caracteres";
         enviar = true;
     }
 

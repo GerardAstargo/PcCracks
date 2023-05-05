@@ -41,7 +41,9 @@
                   <label>
                       <input type="password" name="password" id = "password" placeholder="Contraseña" required=""><span class="barra"></span>
                   </label>
-                        <button type = "submit"  id = "crear">Crear</button> 
+                        <button type = "submit"  class="btn_admin">Crear</button> 
+                       
+                        
                         <p class="warnings" id="warnings"></p>
 
               </form>
@@ -50,13 +52,14 @@
               <form action="#" method="post" id ="login">
                   <h1>Iniciar Sesión</h1>
                   <label>
-                    <input type="email" name="" id = "email_login" placeholder="Correo electronico"><span class="barra" required=""></span>
+                    <input type="email" name="" id = "email_login" placeholder="Correo electronico" required=""><span class="barra" required=""></span>
                   </label>
                   <label>
-                    <input type="password" name="" id = "password_login" placeholder="Contraseña"><span class="barra" required=""></span>
+                    <input type="password" name="" id = "password_login" placeholder="Contraseña" required=""><span class="barra" required=""></span>
                   </label>
                   <a href="Forgot_password.html">¿Olvidaste la contraseña?</a>
-                  <button type = "submit">Ingresar</a></button>
+                  <button  type = "submit" class="btn_admin"><a href="/PCCRACKS/menuON.html">Ingresar</a></button>
+                  <p class="warnings" id="warnings"></p>
               </form>
           </div>
           <div class="overlay-container">
@@ -69,7 +72,7 @@
                   <div class="overlay-panel overlay-right">
                       <h1>Crear Cuenta!</h1>
                       <p>Ingresa aqui si deseas crear una cuenta GRATIS... </p>
-                      <button class="ghost" id="signUp">Crear Cuenta</button>
+                      <a id="signUp" type = "submit" class="btn_admin">Crear Cuenta</a>
                   </div>
               </div>
           </div>
@@ -77,6 +80,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
     <script src="Login_js.js"></script>
     <script src="js/verificacion_registro.js"></script>
+   
   </body>
 </html>
 

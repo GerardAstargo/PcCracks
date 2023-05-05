@@ -84,8 +84,9 @@ header{
     border: 2px solid var(--color_botones_primarios); /*variable*/
     border-radius: 10px;
     font-weight: 500;
-    margin: 0px 3%;
+    margin: 10px 2%;
     transition: all 300ms;
+    white-space: nowrap;
 }
 
 .btn_login:hover{
@@ -148,7 +149,7 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1580px){
+@media screen and (max-width: 1380px){
     .toggle {
         display: inline-block;
     }
