@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> RAM | pcCRACKS </title>
+    <title> Admin | pcCRACKS </title>
     <link rel="stylesheet" href="/PCCRACKS/stylemenuoff.css">
     <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
     
     
+
+    
+    
 </head>
 
- 
+<body>   
     
     
     <header>
         <div class="menu_navegacion">
           <div class="logo">
             <a href="menuON.html">
-              <img src="/PCCRACKS/fotos/logologin.png" alt="">
+              <img src="fotos/logologin.png" alt="">
           </a>
       </div>
           <div class="toggle">
@@ -28,11 +31,11 @@
           <div class="menu_opciones">
               <nav class="nav">
                   <ul class="opciones">
-                      <li><a href="/PCCRACKS/menuON.html">Inicio</a></li>
-                      <li><a href="/PCCRACKS/menuONproductos.html">Productos</a></li>
-                      <li><a href="/PCCRACKS/mapaON.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                      <li><a href="/PCCRACKS/cuenta.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                      <li><a href="/PCCRACKS/carrito.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
+                      <li><a href="menuON.html">Inicio</a></li>
+                      <li><a href="menuONproductos.html">Productos</a></li>
+                      <li><a href="mapaON.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
+                      <li><a href="cuenta.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
+                      <li><a href="carrito.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
                     </ul>
                 </nav>
                 <div class="box">
@@ -57,51 +60,54 @@
     
     </header>
 
-<body>
-      <div class="ad">
-        <div class="descpro">
-          <div class="box one">
-            <div class="details">
-              <div class="topic">Descripcion</div>
-              <p>
-                - Diseño de disipador de calor de perfil bajo actualizado<BR>
-                - Actualización de DDR4 rentable y de alto rendimiento<BR>
-                - Perfiles de Intel XMP optimizados para los últimos chipsets de Intel<BR>
-                - Disponible en velocidades rápidas de hasta 3466 MHz*<BR>
-                - Funcionalidad Plug N Play a 2400 MHz y 2666 MHz<BR>
-               </p>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
 
-              </div>
-                <div class="price-box">
-                  <div class="price">$ 79.990</div>
-                </div>
-            </div>
-            <div class="button1">
-              <a href="/PCCRACKS/pago.html"><button>Comprar</button></a>
-            </div>
-          </div>
-          <div class="box two">
-            <div class="image-box">
-              <div class="image">
-              <img src="/PCCRACKS/FOTOPRODUCTO/RAM/memoria-ram-hyperx-fury-ddr4-8-gb-3600-mhz.png" alt="">
-              </div>
-              <div class="info">
-                <div class="brand">HYPERX</div>
-                <div class="name">Memoria Ram DDR4 16GB 3200MHz HyperX Fury Black, Non-ECC, CL16</div>
-                <div class="shipping">RETIRO EN TIENDA</div>
-                <div class="stock">17 Disponibles</div>
-              </div>
-            </div>
-          </div>
+
+
+    <DIv class="pag_admin">
+        <H1 CLASS="TITULO_ADMIN">Opciones De Administrador</H1>
+        <div class="boton_menuadmin">
+
+            <a class="btn_pgadm_in" href="/PCCRACKS/admin.html">Insertar</a> 
+            <a class="btn_pgadm_ed" href="/PCCRACKS/admined.html">Editar</a> 
+            <a class="btn_pgadm_el" href="/PCCRACKS/adminel.html">Eliminar</a> 
+            
         </div>
-      </div>
-      <section class="contact-area" id="contact">
+
+        <div class="in_producto">
+            <div>            
+                <input type="text" size="30" maxlength="100" value="Marca del producto" name="nombre">
+            </div>
+            <div>
+                <input type="text" size="30" maxlength="100" value="Modelo del producto" name="nombre">
+            </div>
+            
+            <form action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank">
+                <p>
+                Sube la imagen del producto:
+                <input type="file" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                </p>
+            </form>
+            <div>
+                <input class="v_precio" type="text" size="15" maxlength="30" value="Precio" name="nombre">
+            </div>
+            <div>           
+                <input type="text" size="15" maxlength="30" value="Disponibles" name="nombre">
+            </div>
+            <div>
+                <textarea name="comentarios" rows="30" cols="80">Descripción del producto</textarea>
+            </div>
+            <div class="boton2">
+                <a href="/PCCRACKS/admin.html" class="btn_admin">Guardar</a>
+            </div>
+            
+        </div>
+
+        
+    </DIv>
+
+ 
+
+    <section class="contact-area" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -116,15 +122,16 @@
             </div>
         </div>
       </section>
-  
+
       <footer>
         <p>Copyright &copy; 2023 <img src="/PCCRACKS/fotos/logologin.png" alt="logo"> Todos los derechos reservados.</p>
       </footer>
 
+
       <script src="/PCCRACKS/js/menuchico.js"></script>
+
 
 
     </body>
 
-
-  </html>
+    </html>
