@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tienda tecnologica | pcCRACKS </title>
-    <link rel="stylesheet" href="css/stylemenu.css">
-    <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
+    <link rel="stylesheet" href="{% static 'pcracks/css/stylemenu.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/PCCRACKS/fotos/logobarra.png'%}">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -20,7 +21,7 @@
         <div class="menu_navegacion">
           <div class="logo">
             <a href="menuOFF.html">
-                <img src="fotos/logologin.png" alt="">
+                <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
             </a>
         </div>
             <div class="toggle">
@@ -65,10 +66,10 @@
         <div class="swiper-wrapper">
           
           <div class="swiper-slide">
-            <img src="fotos/slider/apertura.png" alt="">
+            <img src="{% static 'pcracks/fotos/slider/apertura.png'%}" alt="">
           </div>
           <div class="swiper-slide"> 
-            <img src="fotos/slider/descuentos.png" alt="">
+            <img src="{% static 'pcracks/fotos/slider/descuentos.png'%}" alt="">
           </div>
         </div>
         
@@ -118,7 +119,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFProcesador.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFProcesador.html"><img src="fotos/cpu.png"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFProcesador.html"><img src="{% static 'pcracks/fotos/cpu.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFProcesador.html"> PROCESADOR </a></h2>
@@ -128,7 +129,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFGabinete.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFGabinete.html"><img alt="Learn CSS" src="fotos/gabinete.png"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFGabinete.html"><img alt="Learn CSS" src="{% static 'pcracks/fotos/gabinete.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFGabinete.html"> GABINETE </a></h2>
@@ -138,7 +139,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFPerifericos.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFPerifericos.html"><img src="fotos/periferico.png" alt=""></a></div> 
+                        <div class="main-container-img"><a href="menuFastOFFPerifericos.html"><img src="{% static 'pcracks/fotos/periferico.png'%}" alt=""></a></div> 
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFPerifericos.html"> PERIFERICOS</a></h2>
@@ -148,7 +149,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFGpu.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFGpu.html"><img src="fotos/tvideo.png"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFGpu.html"><img src="{% static 'pcracks/fotos/tvideo.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFGpu.html"> T. DE VIDEO </a></h2>
@@ -158,7 +159,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFPlaca.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFPlaca.html"><img src="fotos/placa.png"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFPlaca.html"><img src="{% static 'pcracks/fotos/placa.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFPlaca.html"> PLACA MADRE  </a></h2>
@@ -168,7 +169,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFRam.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFRam.html"><img src="fotos/ram.png" width="200" height="200"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFRam.html"><img src="{% static 'pcracks/fotos/ram.png'%}" width="200" height="200"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFRam.html"> RAM</a></h2>
@@ -179,7 +180,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFAlmacenamiento.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFAlmacenamiento.html"><img src="fotos/almacenamiento.png" width="200" height="200"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFAlmacenamiento.html"><img src="{% static 'pcracks/fotos/almacenamiento.png'%}" width="200" height="200"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFAlmacenamiento.html"> ALMACENAMIENTO</a></h2>
@@ -190,7 +191,7 @@
                 <div class="item-box">
                     <a href="menuFastOFFFuente.html"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastOFFFuente.html"><img src="fotos/fuente.png" width="200" height="200"></a></div>
+                        <div class="main-container-img"><a href="menuFastOFFFuente.html"><img src="{% static 'pcracks/fotos/fuente.png' %}" width="200" height="200"></a></div>
                     </div>
                     <div class="main-container-title">
                         <h2><a href="menuFastOFFFuente.html"> FUENTE DE PODER</a></h2>
@@ -210,7 +211,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="contact-content text-center">
-                        <a href="#"><img src="/PCCRACKS/fotos/logobarra.png" alt="logo"></a>
+                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo"></a>
                         <p>Pagina web de ventas de componentes de computador</p>
                         <div class="hr"></div>
                         <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
@@ -222,10 +223,10 @@
       </section>
 
       <footer>
-        <p>Copyright &copy; 2023 <img src="/PCCRACKS/fotos/logologin.png" alt="logo"> Todos los derechos reservados.</p>
+        <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
       </footer>
     
-    <script src="/PCCRACKS/js/menuchico.js"></script>
+    <script src="{% static 'pcracks/PCCRACKS/js/menuchico.js'%}"></script>
 </body>
 
 </html>
