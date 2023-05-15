@@ -4,5 +4,5 @@ from .views import menu_off, login
 
 urlpatterns = [
     path('', menu_off, name='menu_off'),
-    path('login/', login, name='login'),
+    path('login', login, name='login'),
 ]

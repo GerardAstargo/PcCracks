@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
   <head>
     <title>Iniciar Sesion | pcCRACKS</title>
     <meta charset="UTF-8" />
@@ -16,13 +17,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
-    <link rel="stylesheet" href="CSS/Login_style.css" />
-    <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
+    <link rel="stylesheet" href="{% static 'pcracks/CSS/Login_style.css'%}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
  
 </head>
   <body>
     <div class = "logo_login">
-        <img src="fotos/logologin.png" width="350px" height="150px">
+        <img src="{% static 'pcracks/fotos/logologin.png'%}" width="350px" height="150px">
     </div>
   
       <div class="container" id="container">
@@ -78,8 +79,8 @@
           </div>
       </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
-    <script src="Login_js.js"></script>
-    <script src="js/verificacion_registro.js"></script>
+    <script src="{% static 'pcracks/Login_js.js'%}"></script>
+    <script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>
    
   </body>
 </html>
