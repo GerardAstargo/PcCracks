@@ -12,6 +12,15 @@ class Cliente(models.Model):
   email_cliente = models.CharField(max_length=20)
   num_telefonico_cliente = models.IntegerField()
   
+#BASE EMPLEADO
+class Empleado (models.Model):
+  rut_empleado = models.CharField(max_length=15, primary_key=True)
+  nombre_empleado = models.CharField(max_length=15)
+  fecha_nacimiento = models.DateField()
+  direccion_empleado = models.CharField(max_length=30)
+  email_empleado = models.CharField(max_length=20)
+  num_telefonico_empleado = models.IntegerField()
+
 
 #BASE COMPRA
 class Compra(models.Model):
@@ -29,11 +38,22 @@ class Producto (models.Model):
   precio = models.IntegerField()
   compra = models.ForeignKey(Compra,on_delete=models.CASCADE)
 
-#BASE EMPLEADO
-class Empleado (models.Model):
-  rut_empleado = models.CharField(max_length=15, primary_key=True)
-  nombre_empleado = models.CharField(max_length=15)
-  fecha_nacimiento = models.DateField()
-  direccion_empleado = models.CharField(max_length=30)
-  email_empleado = models.CharField(max_length=20)
-  num_telefonico_empleado = models.IntegerField()
+#BASE PEDIDOS
+class Pedido (models.Model):
+  cod_pedido = models.IntegerField(primary_key=True)
+
+#BASE FOTOS
+class fotos (models.Model):
+  foto = models.ImageField(upload_to="producto")
+
+#BASE CONTACTO
+class Contacto (models.Model):
+  correo = models.CharField(max_length=20)
+  nombre = models.CharField(max_length=20)
+  mensaje = models.CharField(max_length=300)
+
+#BASE USUARIO
+class Usuario(models.Model):
+  correo_electronico = models.CharField(max_length=20)
+  contrasena = models.CharField(max_length=20)
+
