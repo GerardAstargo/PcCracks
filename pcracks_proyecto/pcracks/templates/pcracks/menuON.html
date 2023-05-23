@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Tienda tecnologica | pcCRACKS </title>
-    <link rel="stylesheet" href="css/stylemenu.css">
-    <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-    
-</head>
+{% extends 'pcracks/zplantillaON.html' %}
+{% load static %}
 
-<body>
-    <header>
-        <div class="menu_navegacion">
-          <div class="logo">
-            <a href="menuON.html">
-                <img src="fotos/logologin.png" alt="">
-            </a>
-        </div>
-            <div class="toggle">
-                |||
-            </div>
-            <div class="menu_opciones">
-                <nav class="nav">
-                    <ul class="opciones">
-                        <li><a href="menuON.html">Inicio</a></li>
-                        <li><a href="menuONproductos.html">Productos</a></li>
-                        <li><a href="mapaON.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                        <li><a href="cuenta.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                        <li><a href="carrito.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
-                    </ul>
-                </nav>
-                <div class="box">
-                  <div class="container-1">
-                      
-                      <p><input type="search" id="search" placeholder="Busca tu producto aqui crack :)" list="listamodelos"></p>
-                  </div>
-                  <datalist id="listamodelos">
-                    <option value="Intel">
-                    <option value="AMD">
-                    <option value="HyperX">
-                    <option value="Asus">               
-
-                  </datalist>
-                </div>
-                <a href="/PCCRACKS/admin.html" class="btn_login">Administrador</a>
-                <a href="/PCCRACKS/menuOFF.html" class="btn_login">Cerrar Sesión</a>
-                
-                
-
-            </div>
-        </div>
-    
-    </header>
+{% block menu %}
 
     <img src="" alt="">
     <main>
@@ -66,10 +10,10 @@
         <div class="swiper-wrapper">
           
           <div class="swiper-slide">
-            <img src="fotos/slider/apertura.png" alt="">
+            <img src="{% static 'pcracks/fotos/slider/apertura.png'%}" alt="">
           </div>
           <div class="swiper-slide"> 
-            <img src="fotos/slider/descuentos.png" alt="">
+            <img src="{% static 'pcracks/fotos/slider/descuentos.png'%}" alt="">
           </div>
         </div>
         
@@ -117,84 +61,84 @@
             <h1 class="titulo">Menu Rapido</h1>
             <div class="main-container">
                 <div class="item-box">
-                    <a href="menuFastONProcesador.html"></a>
+                    <a href="{% url 'menu_fast_on_procesador'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONProcesador.html"><img src="fotos/cpu.png"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_procesador'%}"><img src="{% static 'pcracks/fotos/cpu.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONProcesador.html"> PROCESADOR </a></h2>
+                        <h2><a href="{% url 'menu_fast_on_procesador'%}"> PROCESADOR </a></h2>
                     </div>
                 </div>
 
                 <div class="item-box">
-                    <a href="menuFastONGabinete.html"></a>
+                    <a href="{% url 'menu_fast_on_gabinete'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONGabinete.html"><img alt="Learn CSS" src="fotos/gabinete.png"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_gabinete'%}"><img alt="Learn CSS" src="{% static 'pcracks/fotos/gabinete.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONGabinete.html"> GABINETE </a></h2>
+                        <h2><a href="{% url 'menu_fast_on_gabinete'%}"> GABINETE </a></h2>
                     </div>
                 </div>
 
                 <div class="item-box">
-                    <a href="menuFastONPerifericos.html"></a>
+                    <a href="{% url 'menu_fast_on_perifericos'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONPerifericos.html"><img src="fotos/periferico.png" alt=""></a></div> 
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_perifericos'%}"><img src="{% static 'pcracks/fotos/periferico.png'%}" alt=""></a></div> 
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONPerifericos.html"> PERIFERICOS</a></h2>
+                        <h2><a href="{% url 'menu_fast_on_perifericos'%}"> PERIFERICOS</a></h2>
                     </div>
                 </div>
 
                 <div class="item-box">
-                    <a href="menuFastONGpu.html"></a>
+                    <a href="{% url 'menu_fast_on_gpu'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONGpu.html"><img src="fotos/tvideo.png"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_gpu'%}"><img src="{% static 'pcracks/fotos/tvideo.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONGpu.html"> T. DE VIDEO </a></h2>
+                        <h2><a href="{% url 'menu_fast_on_gpu'%}"> T. DE VIDEO </a></h2>
                     </div>
                 </div>
 
                 <div class="item-box">
-                    <a href="menuFastONPlaca.html"></a>
+                    <a href="{% url 'menu_fast_on_placa'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONPlaca.html"><img src="fotos/placa.png"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_placa'%}"><img src="{% static 'pcracks/fotos/placa.png'%}"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONPlaca.html"> PLACA MADRE  </a></h2>
+                        <h2><a href="{% url 'menu_fast_on_placa'%}"> PLACA MADRE  </a></h2>
                     </div>
                 </div>
 
                 <div class="item-box">
-                    <a href="menuFastONRam.html"></a>
+                    <a href="{% url 'menu_fast_on_ram'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONRam.html"><img src="fotos/ram.png" width="200" height="200"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_ram'%}"><img src="{% static 'pcracks/fotos/ram.png'%}" width="200" height="200"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONRam.html"> RAM</a></h2>
-                    </div>
-                </div>
-
-
-                <div class="item-box">
-                    <a href="menuFastONAlmacenamiento.html"></a>
-                    <div>
-                        <div class="main-container-img"><a href="menuFastONAlmacenamiento.html"><img src="fotos/almacenamiento.png" width="200" height="200"></a></div>
-                    </div>
-                    <div class="main-container-title">
-                        <h2><a href="menuFastONAlmacenamiento.html"> ALMACENAMIENTO</a></h2>
+                        <h2><a href="{% url 'menu_fast_on_ram'%}"> RAM</a></h2>
                     </div>
                 </div>
 
 
                 <div class="item-box">
-                    <a href="menuFastONFuente.html"></a>
+                    <a href="{% url 'menu_fast_on_almacenamiento'%}"></a>
                     <div>
-                        <div class="main-container-img"><a href="menuFastONFuente.html"><img src="fotos/fuente.png" width="200" height="200"></a></div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_almacenamiento'%}"><img src="{% static 'pcracks/fotos/almacenamiento.png'%}" width="200" height="200"></a></div>
                     </div>
                     <div class="main-container-title">
-                        <h2><a href="menuFastONFuente.html"> FUENTE DE PODER</a></h2>
+                        <h2><a href="{% url 'menu_fast_on_almacenamiento'%}"> ALMACENAMIENTO</a></h2>
+                    </div>
+                </div>
+
+
+                <div class="item-box">
+                    <a href="{% url 'menu_fast_on_fuente'%}"></a>
+                    <div>
+                        <div class="main-container-img"><a href="{% url 'menu_fast_on_fuente'%}"><img src="{% static 'pcracks/fotos/fuente.png'%}" width="200" height="200"></a></div>
+                    </div>
+                    <div class="main-container-title">
+                        <h2><a href="{% url 'menu_fast_on_fuente'%}"> FUENTE DE PODER</a></h2>
                     </div>
                 </div>
 
@@ -204,32 +148,4 @@
             </div>
         </div>
     </main>
-
-
-    <section class="contact-area" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="contact-content text-center">
-                        <a href="#"><img src="/PCCRACKS/fotos/logobarra.png" alt="logo"></a>
-                        <p>Pagina web de ventas de componentes de computador</p>
-                        <div class="hr"></div>
-                        <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
-                        
-                        <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <footer>
-        <p>Copyright &copy; 2023 <img src="/PCCRACKS/fotos/logologin.png" alt="logo"> Todos los derechos reservados.</p>
-        
-    </footer>
-      
-    
-    <script src="/PCCRACKS/js/menuchico.js"></script>
-</body>
-
-</html>
+{% endblock menu %}

@@ -20,7 +20,7 @@
     <header>
         <div class="menu_navegacion">
           <div class="logo">
-            <a href="menuOFF.html">
+            <a href="{% url 'menu_off'%}">
                 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
             </a>
         </div>
@@ -30,11 +30,11 @@
             <div class="menu_opciones">
                 <nav class="nav">
                     <ul class="opciones">
-                        <li><a href="menuOFF.html">Inicio</a></li>
-                        <li><a href="menuOFFproductos.html">Productos</a></li>
-                        <li><a href="mapaOFF.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                        <li><a href="Login.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                        <li><a href="Login.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
+                        <li><a href="{% url 'menu_off'%}">Inicio</a></li>
+                        <li><a href="{% url 'menu_off_productos'%}.html">Productos</a></li>
+                        <li><a href="{% url 'mapa_off'%}"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
+                        <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-user"></i></span></a></li>
+                        <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
                     </ul>
                 </nav>
                 <div class="box">

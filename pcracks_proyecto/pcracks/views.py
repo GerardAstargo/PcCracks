@@ -7,8 +7,8 @@ def menu_off (request):
 def menu_on (request):
     return render (request, 'pcracks/menuON.html')
 
-def mapa_on (request):
-    return render (request, 'pcracks/mapaON.html')
+def mapa_off (request):
+    return render (request, 'pcracks/mapaOFF.html')
 
 def mapa_on (request):
     return render (request, 'pcracks/mapaON.html')
@@ -16,11 +16,29 @@ def mapa_on (request):
 def login (request):
     return render (request, 'pcracks/Login.html')
 
+def forgot_password (request):
+    return render (request, 'pcracks/Forgot_password.html')
+
 def menu_off_productos (request):
     return render (request, 'pcracks/menuOFFproductos.html')
 
 def menu_on_productos (request):
     return render (request, 'pcracks/menuONproductos.html')
+
+def admin_agregar (request):
+    return render (request, 'pcracks/admin.html')
+
+def admin_editar (request):
+    return render (request, 'pcracks/admined.html')
+
+def admin_eliminar (request):
+    return render (request, 'pcracks/adminel.html')
+
+def cuenta (request):
+    return render (request, 'pcracks/cuenta.html')
+
+def carrito (request):
+    return render (request, 'pcracks/carrito.html')
 
 
 

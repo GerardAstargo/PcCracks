@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <header>
         <div class="menu_navegacion">
           <div class="logo">
-            <a href="menuOFF.html">
+            <a href="{% url 'menu_on'%}">
                 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
             </a>
         </div>
@@ -30,11 +30,11 @@
             <div class="menu_opciones">
                 <nav class="nav">
                     <ul class="opciones">
-                        <li><a href="menuOFF.html">Inicio</a></li>
-                        <li><a href="menuOFFproductos.html">Productos</a></li>
-                        <li><a href="mapaOFF.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                        <li><a href="Login.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                        <li><a href="Login.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
+                        <li><a href="{% url 'menu_on'%}">Inicio</a></li>
+                        <li><a href="{% url 'menu_on_productos'%}.html">Productos</a></li>
+                        <li><a href="{% url 'mapa_on'%}"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
+                        <li><a href="{% url 'cuenta'%}"><span class="icon"><i class="fa fa-user"></i></span></a></li>
+                        <li><a href="{% url 'carrito'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
                     </ul>
                 </nav>
                 <div class="box">
@@ -50,18 +50,18 @@
 
                   </datalist>
                 </div>
-                <a href="{% url 'login'%}" class="btn_login">Registrarse</a>
+                <a href="{% url 'admin_agregar'%}" class="btn_login">Administrador</a>
+                <a href="{% url 'menu_off'%}" class="btn_login">Cerrar Sesión</a>
+                
                 
 
-                
             </div>
         </div>
     
     </header>
 
-    {% block menu %}
-    {% endblock menu %}
-    
+{% block menu %}
+{% endblock menu %}
 
     <section class="contact-area" id="contact">
         <div class="container">
@@ -72,6 +72,7 @@
                         <p>Pagina web de ventas de componentes de computador</p>
                         <div class="hr"></div>
                         <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
+                        
                         <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
                     </div>
                 </div>
@@ -81,9 +82,11 @@
 
       <footer>
         <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
-      </footer>
+        
+    </footer>
+      
     
-    <script src="{% static 'pcracks/PCCRACKS/js/menuchico.js'%}"></script>
+    <script src="{% static 'pcracks/js/menuchico.js'%}"></script>
 </body>
 
 </html>
