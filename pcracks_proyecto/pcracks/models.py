@@ -7,7 +7,7 @@ from django.db import models
 class Cliente(models.Model):
   rut_cliente = models.CharField(max_length=15, primary_key=True)
   nombre_cliente = models.CharField(max_length=15)
-  fecha_nacimiento = models.DateField()
+  fecha_nacimiento = models.DateField(blank=True, null=True)
   direccion_cliente = models.CharField(max_length=30)
   email_cliente = models.CharField(max_length=20)
   num_telefonico_cliente = models.IntegerField()
@@ -36,14 +36,17 @@ class Producto (models.Model):
   marca = models.CharField(max_length=20)
   modelo = models.CharField(max_length=20)
   precio = models.IntegerField()
-  compra = models.ForeignKey(Compra,on_delete=models.CASCADE)
+  compra = models.ForeignKey(Compra,on_delete=models.CASCADE, blank=True, null=True)
+
+  def __str__(self):
+    return 'El producto de la marca %s, modelo %s tiene un precio de $%s y lo compro este cliente %s' %(self.marca, self.modelo, self.precio, self.compra)
 
 #BASE PEDIDOS
 class Pedido (models.Model):
   cod_pedido = models.IntegerField(primary_key=True)
 
 #BASE FOTOS
-class fotos (models.Model):
+class Foto (models.Model):
   foto = models.ImageField(upload_to="producto")
 
 #BASE CONTACTO
