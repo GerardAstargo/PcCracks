@@ -11,7 +11,7 @@ class Cliente(models.Model):
   direccion_cliente = models.CharField(max_length=30)
   email_cliente = models.CharField(max_length=20)
   num_telefonico_cliente = models.IntegerField()
-  
+
   def __str__(self):
     return self.nombre_cliente
   
@@ -40,6 +40,7 @@ class Producto (models.Model):
   modelo = models.CharField(max_length=20)
   precio = models.IntegerField(verbose_name="$")
   compra = models.ForeignKey(Compra,on_delete=models.CASCADE, blank=True, null=True)
+  #AGREGAR_CATEGORIA
 
   def __str__(self):
     return 'El producto de la marca %s, modelo %s tiene un precio de $%s y lo compro este cliente %s' %(self.marca, self.modelo, self.precio, self.compra)
@@ -47,6 +48,7 @@ class Producto (models.Model):
 #BASE PEDIDOS
 class Pedido (models.Model):
   cod_pedido = models.IntegerField(primary_key=True)
+  #AGREGAR_FECHA
 
 #BASE FOTOS
 class Foto (models.Model):
