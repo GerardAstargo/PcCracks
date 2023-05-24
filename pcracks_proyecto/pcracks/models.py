@@ -12,6 +12,9 @@ class Cliente(models.Model):
   email_cliente = models.CharField(max_length=20)
   num_telefonico_cliente = models.IntegerField()
   
+  def __str__(self):
+    return self.nombre_cliente
+  
 #BASE EMPLEADO
 class Empleado (models.Model):
   rut_empleado = models.CharField(max_length=15, primary_key=True)
