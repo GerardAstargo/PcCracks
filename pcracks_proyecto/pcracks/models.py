@@ -35,7 +35,7 @@ class Compra(models.Model):
 class Producto (models.Model):
   marca = models.CharField(max_length=20)
   modelo = models.CharField(max_length=20)
-  precio = models.IntegerField()
+  precio = models.IntegerField(verbose_name="$")
   compra = models.ForeignKey(Compra,on_delete=models.CASCADE, blank=True, null=True)
 
   def __str__(self):
