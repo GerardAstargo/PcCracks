@@ -1,8 +1,20 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from pcracks.models import Producto
 
 # Create your views here.
 def menu_off (request):
     return render(request, 'pcracks/menuOFF.html')
+def buscar(request):
+    if request.GET["barra_buscar"]:
+        #mensaje="Articulo buscado: %r" %request.GET["barra_buscar"]
+        prd=request.GET["barra_buscar"]
+        articulos=Producto.objects.filter(marca__icontains=prd)
+        return render(request, "pcracks/resultados_busqueda.html", {"articulos": articulos, "query":prd})
+
+    else:
+        mensaje="no has introducido nada"
+    return HttpResponse(mensaje)
 
 def menu_on (request):
     return render (request, 'pcracks/menuON.html')
@@ -90,5 +102,4 @@ def menu_fast_off_fuente (request):
 
 def menu_fast_off_almacenamiento (request):
     return render (request, 'pcracks/menuFastOFFAlmacenamiento.html')
-
 

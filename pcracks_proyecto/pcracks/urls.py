@@ -18,6 +18,7 @@ urlpatterns = [
     path('Cuenta', cuenta, name='cuenta'),
     path('Carrito', carrito, name='carrito'),
 
+
     
     
     path('menuFastONRam', menu_fast_on_ram, name='menu_fast_on_ram'),

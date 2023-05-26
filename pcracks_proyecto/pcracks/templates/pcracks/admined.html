@@ -76,9 +76,13 @@
         </div>
 
         <div class="in_producto">
-            <div>            
-                <input type="text" size="16" maxlength="20" placeholder="Codigo Del Producto" name="nombre">
-            </div>
+
+            <form action="/buscar/" method="GET">
+                <input type="text" placeholder="Codigo Del Producto" name="codigo_ed">
+
+                <input type="submit" value="buscar">
+            </form>
+
             <div>            
                 <input type="text" size="30" maxlength="100" placeholder="Marca del producto" name="nombre">
             </div>
