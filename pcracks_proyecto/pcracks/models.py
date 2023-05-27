@@ -7,6 +7,7 @@ from django.db import models
 class Cliente(models.Model):
   rut_cliente = models.CharField(max_length=15, primary_key=True)
   nombre_cliente = models.CharField(max_length=15)
+  apellido_cliente = models.CharField(max_length=15)
   fecha_nacimiento = models.DateField(blank=True, null=True)
   direccion_cliente = models.CharField(max_length=30)
   email_cliente = models.CharField(max_length=20)
@@ -19,9 +20,11 @@ class Cliente(models.Model):
 class Empleado (models.Model):
   rut_empleado = models.CharField(max_length=15, primary_key=True)
   nombre_empleado = models.CharField(max_length=15)
+  apellido_empleado = models.CharField(max_length=15)
   fecha_nacimiento = models.DateField()
   direccion_empleado = models.CharField(max_length=30)
   email_empleado = models.CharField(max_length=20)
+  cargo_empleado = models.CharField(max_length=20)
   num_telefonico_empleado = models.IntegerField()
 
 
@@ -31,16 +34,18 @@ class Compra(models.Model):
   metodo_pago = models.CharField(max_length=20)
   cantidad_productos = models.IntegerField()
   total_compra = models.IntegerField()
-  fecha_compra = models.DateField()
-  cliente = models.ForeignKey(Cliente,on_delete=models.CASCADE)
+  fecha_compra = models.DateTimeField(auto_now_add=True)
+
 
 #BASE PRODUCTO
 class Producto (models.Model):
+  cod_producto = models.IntegerField(primary_key=True)
   marca = models.CharField(max_length=20)
   modelo = models.CharField(max_length=20)
+  descripcion = models.CharField(max_length=400)
+  disponibilidad = models.IntegerField()
   precio = models.IntegerField(verbose_name="$")
-  compra = models.ForeignKey(Compra,on_delete=models.CASCADE, blank=True, null=True)
-  #AGREGAR_CATEGORIA
+  categoria = models.CharField(max_length=20)
 
   def __str__(self):
     return 'El producto de la marca %s, modelo %s tiene un precio de $%s y lo compro este cliente %s' %(self.marca, self.modelo, self.precio, self.compra)
@@ -48,7 +53,8 @@ class Producto (models.Model):
 #BASE PEDIDOS
 class Pedido (models.Model):
   cod_pedido = models.IntegerField(primary_key=True)
-  #AGREGAR_FECHA
+  fecha_pedido = models.DateTimeField(auto_now_add=True)
+  cliente = models.ForeignKey(Cliente,on_delete=models.CASCADE)
 
 #BASE FOTOS
 class Foto (models.Model):
