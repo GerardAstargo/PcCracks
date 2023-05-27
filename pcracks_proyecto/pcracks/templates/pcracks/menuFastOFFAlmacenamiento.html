@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
     <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Almacenamientos | pcCRACKS </title>
-    <link rel="stylesheet" href="/PCCRACKS/stylemenuoff.css">
-    <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
+    <link rel="stylesheet" href="{% static 'pcracks/stylemenuoff.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
     
     
 </head>
@@ -19,7 +20,7 @@
         <div class="menu_navegacion">
           <div class="logo">
             <a href="menuOFF.html">
-                <img src="fotos/logologin.png" alt="">
+                <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
             </a>
         </div>
             <div class="toggle">
@@ -67,7 +68,7 @@
       
       <div class="card">
         <div class="imgBox">
-          <img src="/PCCRACKS/FOTOPRODUCTO/ALMACENAMIENTO/540.PNG" alt="" class="mouse">
+          <img src="{% static 'pcracks/FOTOPRODUCTO/ALMACENAMIENTO/540.PNG'%}" alt="" class="mouse">
         </div>
       
         <div class="contentBox">
@@ -81,7 +82,7 @@
 
       <div class="card">
         <div class="imgBox">
-          <img src="/PCCRACKS/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_652728-MLA53971835575_022023-O.webp" alt="" class="mouse">
+          <img src="{% static 'pcracks/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_652728-MLA53971835575_022023-O.webp'%}" alt="" class="mouse">
         </div>
       
         <div class="contentBox">
@@ -95,7 +96,7 @@
 
       <div class="card">
         <div class="imgBox">
-          <img src="/PCCRACKS/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_691272-MCO45626132417_042021-O.jpg" alt="" class="mouse">
+          <img src="{% static 'pcracks/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_691272-MCO45626132417_042021-O.jpg'%}" alt="" class="mouse">
         </div>
       
         <div class="contentBox">
@@ -110,7 +111,7 @@
 
       <div class="card">
         <div class="imgBox">
-          <img src="/PCCRACKS/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_917766-MCO44535414613_012021-O.PNG" alt="" class="mouse">
+          <img src="{% static 'pcracks/FOTOPRODUCTO/ALMACENAMIENTO/D_NQ_NP_917766-MCO44535414613_012021-O.PNG'%}" alt="" class="mouse">
         </div>
       
         <div class="contentBox">
@@ -133,7 +134,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="contact-content text-center">
-                        <a href="#"><img src="/PCCRACKS/fotos/logobarra.png" alt="logo"></a>
+                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo"></a>
                         <p>Pagina web de ventas de componentes de computador</p>
                         <div class="hr"></div>
                         <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
@@ -145,11 +146,11 @@
       </section>
 
       <footer>
-        <p>Copyright &copy; 2023 <img src="/PCCRACKS/fotos/logologin.png" alt="logo"> Todos los derechos reservados.</p>
+        <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
       </footer>
 
 
-      <script src="/PCCRACKS/js/menuchico.js"></script>
+      <script src="{% static 'pcracks/js/menuchico.js'%}"></script>
 
 
     </body>

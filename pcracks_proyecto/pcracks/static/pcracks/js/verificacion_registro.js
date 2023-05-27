@@ -12,8 +12,7 @@ formulario.addEventListener('submit',e =>{
     let msjMostrar = "";
     let enviar = false;
 
-    e.preventDefault();
-
+//Verificaciones
     if(nombre.value.length < 5 || nombre.value.length > 15){
         msjMostrar = msjMostrar + "El nombre debe tener entre 5 y 15 caracteres, solo letras";
         enviar = true;
@@ -34,6 +33,8 @@ formulario.addEventListener('submit',e =>{
         msjMostrar = msjMostrar + "La contraseña debe tener entre 5 y 15 caracteres";
         enviar = true;
     }
+
+    e.preventDefault();
 
     if(enviar){
         msj.innerHTML = msjMostrar;

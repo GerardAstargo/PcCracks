@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" >
+  {% load static %}
 <head>
   <meta charset="UTF-8">
   <title> Pago | pcCRACKS </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="css/stylepago.css">
-  <link rel="icon" type="image/x-icon" href="/PCCRACKS/fotos/logobarra.png">
+  <link rel="stylesheet" href="{% static 'pcracks/css/stylepago.css'%}">
+  <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
 </head>
 <body>
   <div id="container">
@@ -35,7 +36,7 @@
           <div class="card-item__side -front">
             <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
             <div class="card-item__cover">
-              <img src="fotos/logobarra.png" alt="" class="card-item__bg">
+              <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="" class="card-item__bg">
             </div>
             
             <div class="card-item__wrapper">
@@ -126,7 +127,7 @@
           <div class="card-item__side -back">
             <div class="card-item__cover">
               <img
-              src="fotos/logobarra.png" class="card-item__bg">
+              src="{% static 'pcracks/fotos/logobarra.png'%}" class="card-item__bg">
             </div>
             <div class="card-item__band"></div>
             <div class="card-item__cvv">
@@ -191,7 +192,7 @@
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
-<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="./script.js"></script>
+<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="{% static 'pcracks/script.js'%}"></script>
 
 </body>
 </html>

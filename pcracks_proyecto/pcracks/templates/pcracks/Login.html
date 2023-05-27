@@ -25,10 +25,12 @@
     <div class = "logo_login">
         <img src="{% static 'pcracks/fotos/logologin.png'%}" width="350px" height="150px">
     </div>
-  
+
+    <!--FORMULARIO CREAR CUENTA-->
       <div class="container" id="container">
           <div class="form-container sign-up-container">
               <form action="#" method="post" id ="register">
+                {% csrf_token %}
                   <h1>Crear Cuenta</h1>
                   <label>
                       <input type="text" name="name" id = "name" placeholder="Nombre" required="" pattern="[a-zA-Z]+"><span class="barra"></span>
@@ -49,8 +51,12 @@
 
               </form>
           </div>
+          <!--TERMINO FORMULARIO CREAR CUENTA-->
+
+          <!--FORMULARIO INICIAR SESION -->
           <div class="form-container sign-in-container">
               <form action="#" method="post" id ="login">
+                {% csrf_token%}
                   <h1>Iniciar Sesión</h1>
                   <label>
                     <input type="email" name="" id = "email_login" placeholder="Correo electronico" required=""><span class="barra" required=""></span>
@@ -63,6 +69,8 @@
                   <p class="warnings" id="warnings"></p>
               </form>
           </div>
+          <!--TERMINO FORMULARIO INICIAR SESION-->
+
           <div class="overlay-container">
               <div class="overlay">
                   <div class="overlay-panel overlay-left">
