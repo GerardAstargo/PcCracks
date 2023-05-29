@@ -96,7 +96,7 @@ inputs.forEach((input) => {
 });
 
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
+	
 
 	const terminos = document.getElementById('terminos');
 	if(campos.apellido && campos.nombre && campos.rut && campos.direccion &&  campos.password && campos.correo && campos.telefono && terminos.checked ){
@@ -110,7 +110,12 @@ formulario.addEventListener('submit', (e) => {
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
+		
+		
 	} else {
+		e.preventDefault();
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		
+		
 	}
 });

@@ -26,6 +26,7 @@
             
 
         </header>
+		<a class="cuenta_add" href="">¿Ya tienes una cuenta?</a>
 		
 		<form action="{% url 'agregarCliente' %}" method="POST" name="formulario" class="formulario" id="formulario">
             {% csrf_token %}
@@ -131,10 +132,10 @@
 			</div>
 			
 		</form>
-        <a class="cuenta_add" href="">¿Ya tienes una cuenta?</a>
+        
 	</main>
 
-	<!--<script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>-->
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>
+
 </body>
 </html>

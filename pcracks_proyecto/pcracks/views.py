@@ -5,6 +5,9 @@ from pcracks.models import *
 # Create your views here.
 def menu_off (request):
     return render(request, 'pcracks/menuOFF.html')
+
+
+
 def buscar(request):
     if request.GET["barra_buscar"]:
         #mensaje="Articulo buscado: %r" %request.GET["barra_buscar"]
@@ -22,6 +25,9 @@ def registro (request):
         "listaCliente": cuenta
     }
     return render(request, 'pcracks/registro.html',contexto)
+
+def modificarCuenta (request):
+    return render(request, 'pcracks/modificar_cuenta.html')
 
 
 def agregarCliente(request):

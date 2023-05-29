@@ -16,6 +16,7 @@ urlpatterns = [
     path('admined/', admin_editar, name='admin_editar'),
     path('adminel/', admin_eliminar, name='admin_eliminar'),
     path('cuenta/', cuenta, name='cuenta'),
+    path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
     path('agregarCliente/',agregarCliente,name="agregarCliente"),
@@ -40,6 +41,7 @@ urlpatterns = [
     path('menuFastOFFGabinete/', menu_fast_off_gabinete, name='menu_fast_off_gabinete'),
     path('menuFastOFFFuente/', menu_fast_off_fuente, name='menu_fast_off_fuente'),
     path('menuFastOFFAlmacenamiento/', menu_fast_off_almacenamiento, name='menu_fast_off_almacenamiento'),
+
 
 
 ]
