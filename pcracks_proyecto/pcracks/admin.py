@@ -7,7 +7,10 @@ class ClientesAdmin(admin.ModelAdmin):
     search_fields = ("nombre_cliente", "rut_cliente")
 
 class ProductosAdmin(admin.ModelAdmin):
-    list_filter = ("marca",)
+    list_display = ("cod_producto","categoria","marca","modelo","precio","disponibilidad")
+    list_filter = ("marca","categoria")
+    search_fields = ("cod_producto",)
+
 
 """
 class PedidosAdmin(admin.ModelAdmin):

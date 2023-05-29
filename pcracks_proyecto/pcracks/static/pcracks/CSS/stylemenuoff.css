@@ -556,17 +556,7 @@ footer img {
     color: red;
 }
 
-.mantenimiento{
-    text-align: center;
-    position: static;
-    top: 50%;
-    font-size: 50px;
-    color: var(--color_botones_primarios);
-    z-index: 100;
-}
-.mantenimiento h4{
-    color: green;
-}
+
 
 
 .pag_admin{

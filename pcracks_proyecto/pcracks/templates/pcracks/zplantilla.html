@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tienda tecnologica | pcCRACKS </title>
     <link rel="stylesheet" href="{% static 'pcracks/css/stylemenu.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/PCCRACKS/fotos/logobarra.png'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -16,44 +16,46 @@
     
 </head>
 
+<header>
+    <div class="menu_navegacion">
+      <div class="logo">
+        <a href="{% url 'menu_off'%}">
+            <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
+        </a>
+    </div>
+        <div class="toggle">
+            |||
+        </div>
+        <div class="menu_opciones">
+            <nav class="nav">
+                <ul class="opciones">
+                    <li><a href="{% url 'menu_off'%}">Inicio</a></li>
+                    <li><a href="{% url 'menu_off_productos'%}.html">Productos</a></li>
+                    <li><a href="{% url 'mapa_off'%}"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
+                    <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-user"></i></span></a></li>
+                    <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
+                </ul>
+            </nav>
+
+              <div class="container-1">
+                  
+                <FORM action="/buscar/" method="GET">
+                    <input type="text" id="search" placeholder="Busca tu producto aqui crack :)" list="listamodelos">
+                </FORM>
+                  
+              </div>
+
+            <a href="{% url 'login'%}" class="btn_login">Registrarse</a>
+            
+
+            
+        </div>
+    </div>
+
+</header>
+
 <body>
-    <header>
-        <div class="menu_navegacion">
-          <div class="logo">
-            <a href="{% url 'menu_off'%}">
-                <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
-            </a>
-        </div>
-            <div class="toggle">
-                |||
-            </div>
-            <div class="menu_opciones">
-                <nav class="nav">
-                    <ul class="opciones">
-                        <li><a href="{% url 'menu_off'%}">Inicio</a></li>
-                        <li><a href="{% url 'menu_off_productos'%}.html">Productos</a></li>
-                        <li><a href="{% url 'mapa_off'%}"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                        <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                        <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
-                    </ul>
-                </nav>
-
-                  <div class="container-1">
-                      
-                    <FORM action="/buscar/" method="GET">
-                        <input type="search" id="search" placeholder="Busca tu producto aqui crack :)" name="barra_buscar">
-                        
-                    </FORM>
-                  </div>
-
-                <a href="{% url 'login'%}" class="btn_login">Registrarse</a>
-                
-
-                
-            </div>
-        </div>
     
-    </header>
 
     {% block menu %}
     {% endblock menu %}

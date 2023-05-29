@@ -1,111 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Cuenta | pcCRACKS </title>
-    <link rel="stylesheet" href="{% static 'pcracks/stylemenuoff.css'%}">
-    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
+{% extends 'pcracks/zplantillaON.html' %}
+{% load static %}
+
     
+
+{% block menu %}
     
-</head>
 
-<body>   
-    
-    
-    <header>
-        <div class="menu_navegacion">
-          <div class="logo">
-            <a href="menuON.html">
-              <img src="{% static 'pcracks/fotos/logologin.png'$}" alt="">
-          </a>
-      </div>
-          <div class="toggle">
-              |||
-          </div>
-          <div class="menu_opciones">
-              <nav class="nav">
-                  <ul class="opciones">
-                      <li><a href="menuON.html">Inicio</a></li>
-                      <li><a href="menuONproductos.html">Productos</a></li>
-                      <li><a href="mapaON.html"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
-                      <li><a href="cuenta.html"><span class="icon"><i class="fa fa-user"></i></span></a></li>
-                      <li><a href="carrito.html"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
-                    </ul>
-                </nav>
-                <div class="box">
-                  <div class="container-1">
-                      
-                      <p><input type="search" id="search" placeholder="Busca tu producto aqui crack :)" list="listamodelos"></p>
-                  </div>
-                  <datalist id="listamodelos">
-                    <option value="Intel">
-                    <option value="AMD">
-                    <option value="HyperX">
-                    <option value="Asus">               
+    <div class="mantenimiento2">
+        <P>-</P>
+        <P>-</P>
+        <P>-</P>
+        <P>-</P>
+        <P>_</P>
+        <table border="1">
+            <tr>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            </tr>
+            {% for m in listaCliente %}
+            <tr>
+                <td>{{ m.rut_cliente }}</td>
+                <td>{{ m.nombre_cliente }}</td>
+                <td>{{ m.apellido_cliente }}</td>
+                <td>{{ m.direccion_cliente }}</td>
+                <td>{{ m.num_telefonico_cliente }}</td>
+                <td>{{ m.email_cliente }}</td>
 
-                  </datalist>
-                </div>
-                <a href="/PCCRACKS/menuOFF.html" class="btn_login">Cerrar Sesión</a>
-                
+                <td>{{ m.contrasenaC.contrasena  }}</td>
+                <td>
+                    <a href="" class="btn btn-primary">Modificar</a><br>
+                    <a href="" class="btn btn-danger">Eliminar</a>
+                </td>
 
-                
-            </div>
-        </div>
-    
-    </header>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
-
-
-
-    <DIv class="mantenimiento">
-        <div>
-        .
-        </div>
-        <div>
-            <H2>EN MANTENIMIENTO<i class="fa fa-cogs" aria-hidden="true"></i></H2>
-        </div>
-        <P>La visualizacion de los datos de la cuenta se encuentra en mantenimiento, por favor vuelva pronto</P>
-        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-
-
-        
-
-
-    </DIv>
-
- 
-
-    <section class="contact-area" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="contact-content text-center">
-                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo"></a>
-                        <p>Pagina web de ventas de componentes de computador</p>
-                        <div class="hr"></div>
-                        <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
-                        <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-      </section>
-
-      <footer>
-        <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
-      </footer>
-
-
-      <script src="{% static 'pcracks/js/menuchico.js'%}"></script>
-
-
-    </body>
-
-    </html>
+{% endblock menu %}

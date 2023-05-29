@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from pcracks.models import Producto
+from pcracks.models import *
 
 # Create your views here.
 def menu_off (request):
@@ -15,6 +15,37 @@ def buscar(request):
     else:
         mensaje="no has introducido nada"
     return HttpResponse(mensaje)
+
+def registro (request):
+    cuenta = Cliente.objects.all()
+    contexto ={
+        "listaCliente": cuenta
+    }
+    return render(request, 'pcracks/registro.html',contexto)
+
+
+def agregarCliente(request):
+
+    rutC = request.POST['rut']
+    nombreC = request.POST['nombre']
+    apellidoC = request.POST['apellido']
+    direccionC = request.POST['direccion']
+    emailC =  request.POST['correo']
+    numeroC = request.POST['telefono']
+    contrasenaC = request.POST['password']
+
+
+    
+
+    Cliente.objects.create(rut_cliente = rutC, nombre_cliente = nombreC,
+                           apellido_cliente = apellidoC, direccion_cliente = direccionC,
+                           email_cliente = emailC, num_telefonico_cliente = numeroC,
+                           contrasena_cliente = contrasenaC
+                           
+                           )
+    
+    return redirect('registro')
+
 
 def menu_on (request):
     return render (request, 'pcracks/menuON.html')
@@ -47,6 +78,9 @@ def admin_eliminar (request):
     return render (request, 'pcracks/adminel.html')
 
 def cuenta (request):
+    
+    
+
     return render (request, 'pcracks/cuenta.html')
 
 def carrito (request):

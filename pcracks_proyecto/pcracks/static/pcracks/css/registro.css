@@ -20,6 +20,7 @@ main {
   margin-top: 2%;
 }
 .formulario {
+	margin-block-end: 4%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
@@ -86,7 +87,7 @@ main {
 .formulario__mensaje {
 	height: 45px;
 	line-height: 45px;
-	background: #F66060;
+	background: #ff7300;
 	padding: 0 15px;
 	border-radius: 3px;
 	display: none;
