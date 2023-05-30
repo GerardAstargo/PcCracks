@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+from django.contrib import messages
 
 # Create your views here.
 def menu_off (request):
@@ -44,7 +45,7 @@ def agregarCliente(request):
                            apellido_cliente = apellidoC, direccion_cliente = direccionC,
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
                            contrasena_cliente = contrasenaC)
-    
+    messages.add_message(request=request, level=messages.SUCCESS, message="Cuenta creada correctamente!")
     return redirect('registro')
 
 
