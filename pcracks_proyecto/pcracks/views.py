@@ -45,7 +45,7 @@ def agregarCliente(request):
                            apellido_cliente = apellidoC, direccion_cliente = direccionC,
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
                            contrasena_cliente = contrasenaC)
-    messages.add_message(request=request, level=messages.SUCCESS, message="Cuenta creada correctamente!")
+    messages.success(request,"Cuenta creada correctamente!")
     return redirect('registro')
 
 
