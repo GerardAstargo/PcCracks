@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from pcracks.models import *
+from .models import *
 
 # Create your views here.
 def menu_off (request):
@@ -46,9 +46,7 @@ def agregarCliente(request):
     Cliente.objects.create(rut_cliente = rutC, nombre_cliente = nombreC,
                            apellido_cliente = apellidoC, direccion_cliente = direccionC,
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
-                           contrasena_cliente = contrasenaC
-                           
-                           )
+                           contrasena_cliente = contrasenaC)
     
     return redirect('registro')
 

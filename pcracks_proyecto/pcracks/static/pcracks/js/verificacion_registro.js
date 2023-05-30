@@ -100,7 +100,7 @@ formulario.addEventListener('submit', (e) => {
 
 	const terminos = document.getElementById('terminos');
 	if(campos.apellido && campos.nombre && campos.rut && campos.direccion &&  campos.password && campos.correo && campos.telefono && terminos.checked ){
-		formulario.reset();
+		
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
@@ -110,6 +110,7 @@ formulario.addEventListener('submit', (e) => {
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
+		
 		
 		
 	} else {

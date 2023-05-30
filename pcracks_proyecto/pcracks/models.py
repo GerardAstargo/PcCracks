@@ -12,8 +12,7 @@ class Cliente(models.Model):
   num_telefonico_cliente = models.CharField(max_length=8)
   contrasena_cliente = models.CharField(max_length=20)
 
-  def __str__(self):
-    return self.nombre_cliente
+  
   
 #BASE EMPLEADO
 class Empleado (models.Model):
