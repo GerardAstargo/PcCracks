@@ -137,11 +137,22 @@
 				<button type="submit" class="formulario__btn">Registrarse</button>
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Registrado exitosamente!</p>
 			</div>
-			
+			{%if message %}
+				{% for m in message %}
+					<script>
+						Swal.fire({
+							"title": "Felicitaciones!",
+							"text": "{{m}}"
+							"icon": "success"
+						})
+					</script>
+				{% endfor %}
+			{% endif %}	
 		</form>
         
 	</main>
 
+	<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.9/dist/sweetalert2.all.min.js "></script>
 	<script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script> 
 
 </body>
