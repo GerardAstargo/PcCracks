@@ -5,41 +5,30 @@
 
 {% block menu %}
     
-
-    <div class="mantenimiento2">
-        <P>-</P>
-        <P>-</P>
-        <P>-</P>
-        <P>-</P>
-        <P>_</P>
-        <table border="1">
-            <tr>
-                <th>Rut</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Correo</th>
-                <th>Contraseña</th>
-                <th>Acciones</th>
-            </tr>
-            {% for m in listaCliente %}
-            <tr>
-                <td>{{ m.rut_cliente }}</td>
-                <td>{{ m.nombre_cliente }}</td>
-                <td>{{ m.apellido_cliente }}</td>
-                <td>{{ m.direccion_cliente }}</td>
-                <td>{{ m.num_telefonico_cliente }}</td>
-                <td>{{ m.email_cliente }}</td>
-                <td>{{ m.contrasena_cliente }}</td>
-                <td>
-                    <a href="" class="btn btn-primary">Modificar</a><br>
-                    <a href="" class="btn btn-danger">Eliminar</a>
-                </td>
-
-            </tr>
-            {% endfor %}
-        </table>
+<main class="maintabla">
+    {% for m in listaCliente %}
+    
+    <section>
+        <article>
+            <h1>RUT</h1> <P>{{ m.rut_cliente }}</P>
+            <h1>NOMBRE</h1> <P>{{ m.nombre_cliente }}</P>
+            <h1>APELLIDO</h1> <P>{{ m.apellido_cliente }}</P>
+            <h1>DIRECCION</h1> <P>{{ m.direccion_cliente }}</P>
+            <h1>CORREO</h1> <P>{{ m.email_cliente }}</P>
+            <h1>TELEFONO</h1> <P>{{ m.num_telefonico_cliente }}</P>
+            <h1>CONTRASEÑA</h1> <P>{{ m.contrasena_cliente }}</P>
+        </article>
+        
+        
+    </section>
+    <div>
+        <a href="" class="btn_cuenta">Editar</a>
+        <a href="" class="btn_cuenta">Eliminar</a>
     </div>
+    
+    
 
+    
+    {% endfor %}
+</main>
 {% endblock menu %}

@@ -44,10 +44,10 @@ class Producto (models.Model):
   precio = models.IntegerField(verbose_name="$")
   categoria = models.CharField(max_length=20)
 
-  def __str__(self):
+  """def __str__(self):
     return self.cod_producto,self.categoria,self.marca, self.modelo, self.precio, self.disponibilidad
 
-  """def __str__(self):
+  def __str__(self):
     return ' El %s de la marca %s, modelo %s tiene un precio de $%s y hay disponible %s' %(self.categoria,self.marca, self.modelo, self.precio, self.disponibilidad)"""
 
 #BASE PEDIDOS

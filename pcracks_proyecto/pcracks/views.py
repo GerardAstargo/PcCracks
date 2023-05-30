@@ -10,7 +10,7 @@ def menu_off (request):
 
 def buscar(request):
     if request.GET["barra_buscar"]:
-        #mensaje="Articulo buscado: %r" %request.GET["barra_buscar"]
+        mensaje="Articulo buscado: %r" %request.GET["barra_buscar"]
         prd=request.GET["barra_buscar"]
         articulos=Producto.objects.filter(marca__icontains=prd)
         return render(request, "pcracks/resultados_busqueda.html", {"articulos": articulos, "query":prd})
@@ -20,11 +20,8 @@ def buscar(request):
     return HttpResponse(mensaje)
 
 def registro (request):
-    cuenta = Cliente.objects.all()
-    contexto ={
-        "listaCliente": cuenta
-    }
-    return render(request, 'pcracks/registro.html',contexto)
+    
+    return render(request, 'pcracks/registro.html')
 
 def modificarCuenta (request):
     return render(request, 'pcracks/modificar_cuenta.html')
@@ -83,9 +80,12 @@ def admin_eliminar (request):
 
 def cuenta (request):
     
-    
+    cuenta = Cliente.objects.all()
+    contexto ={
+        "listaCliente": cuenta
+    }
 
-    return render (request, 'pcracks/cuenta.html')
+    return render (request, 'pcracks/cuenta.html', contexto)
 
 def carrito (request):
     return render (request, 'pcracks/carrito.html')
