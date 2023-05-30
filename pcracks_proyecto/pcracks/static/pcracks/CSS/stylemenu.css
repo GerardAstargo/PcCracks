@@ -631,7 +631,7 @@ footer img {
     
 	
     height: 100%;
-    margin:5% 2% ;
+    margin:8% 2% ;
     display: block;
     padding: 0px 30%;
     max-width: 100%;
@@ -677,4 +677,15 @@ footer img {
 .maintabla div{
     text-align: center;
     display: flex;
+}
+
+@media screen and (max-width: 800px) {
+    .maintabla{
+    
+	
+       
+        margin:12% 2% ;
+        
+        
+    }
 }
