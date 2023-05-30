@@ -19,13 +19,7 @@
     
 </head>
 <body>
-	{% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+	
 	<main>
         <header class="cabecera">
             <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="" height="100px" >
@@ -141,8 +135,8 @@
 				
 		</form>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		{% if message %}
-			{% for m in message %}
+		{% if messages %}
+			{% for m in messages %}
 					<script>
 						Swal.fire({
 							"title": "Felicitaciones!",
