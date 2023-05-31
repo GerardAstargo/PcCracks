@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -18,14 +18,21 @@
 
 <header>
     <div class="menu_navegacion">
-      <div class="logo">
-        <a href="{% url 'menu_off'%}">
+        <div class="logo">
             <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
-        </a>
-    </div>
+        </div>
+        <div class="box">
+            <div class="container-1">
+                
+                <FORM action="/buscar/" method="GET">
+                <input type="text" name="barra_buscar" id="search" placeholder="🔍︎ Busca tu producto aqui :)" >
+                </FORM>
+            </div>
+        </div>
         <div class="toggle">
             |||
         </div>
+        
         <div class="menu_opciones">
             <nav class="nav">
                 <ul class="opciones">
@@ -36,16 +43,8 @@
                     <li><a href="{% url 'login'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
                 </ul>
             </nav>
-
-              <div class="container-1">
-                  
-                <FORM action="/buscar/" method="GET" name="barra_buscar">
-                    <input type="text" id="search" placeholder="Busca tu producto aqui crack :)" name="barra_buscar" >
-                </FORM>
-                  
-              </div>
-
-            <a href="{% url 'login'%}" class="btn_login">Registrarse</a>
+            <a href="{% url 'login'%}" class="btn_login">Iniciar sesión</a>
+            <a href="{% url 'registro'%}" class="btn_login">Registrarse</a>
             
 
             
@@ -57,29 +56,26 @@
 <body>
     
 
-    {% block menu %}
-    {% endblock menu %}
+{% block menu %}
+{% endblock menu %}
     
 
-    <section class="contact-area" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="contact-content text-center">
-                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo"></a>
+<footer>
+    <section class="contact-area" >
+        <div class="piedepagina">
+                    <div class="contact-content">
+                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" class="logofoteer" ></a>
                         <p>Pagina web de ventas de componentes de computador</p>
                         <div class="hr"></div>
                         <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
+                        
                         <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
                     </div>
-                </div>
-            </div>
         </div>
-      </section>
+    </section>
+    <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
 
-      <footer>
-        <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
-      </footer>
+</footer>
     
     <script src="{% static 'pcracks/js/menuchico.js'%}"></script>
 </body>

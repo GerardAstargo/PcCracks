@@ -18,11 +18,19 @@
 
 <header>
     <div class="menu_navegacion">
-      <div class="logo">
-        <a href="{% url 'menu_on'%}">
-            <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
-        </a>
-    </div>
+        <div class="logo">
+                <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
+        </div>
+        <div class="box">
+            <div class="container-1">
+                
+                <FORM action="/buscar/" method="GET">
+                  <input type="text" name="barra_buscar" id="search" placeholder="🔍︎ Busca tu producto aqui :)" >
+              </FORM>
+                
+            </div>
+        </div>
+    
         <div class="toggle">
             |||
         </div>
@@ -36,27 +44,12 @@
                     <li><a href="{% url 'carrito'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
                 </ul>
             </nav>
-            <div class="box">
-              <div class="container-1">
-                  
-                  <FORM action="/buscar/" method="GET">
-                    <input type="text" name="barra_buscar" id="search" placeholder="Busca tu producto aqui crack :)" >
-                </FORM>
-                  
-              </div>
-              <datalist id="listamodelos">
-                <option value="Intel">
-                <option value="AMD">
-                <option value="HyperX">
-                <option value="Asus">               
-
-              </datalist>
-            </div>
-            <a href="{% url 'admin_agregar'%}" class="btn_login">Administrador</a>
-            <a href="{% url 'menu_off'%}" class="btn_login">Cerrar Sesión</a>
             
             
-
+            
+                <a href="{% url 'admin_agregar'%}" class="btn_login">Administrador</a>
+                <a href="{% url 'menu_off'%}" class="btn_login">Cerrar Sesión</a>
+            
         </div>
     </div>
 
@@ -68,28 +61,24 @@
 {% block menu %}
 {% endblock menu %}
 
-    <section class="contact-area" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="contact-content text-center">
-                        <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo"></a>
-                        <p>Pagina web de ventas de componentes de computador</p>
-                        <div class="hr"></div>
-                        <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
-                        
-                        <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
 
       <footer>
-        <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
-        
+            <section class="contact-area" >
+                <div class="piedepagina">
+                            <div class="contact-content">
+                                <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" class="logofoteer" ></a>
+                                <p>Pagina web de ventas de componentes de computador</p>
+                                <div class="hr"></div>
+                                <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
+                                
+                                <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
+                            </div>
+                </div>
+            </section>
+            <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
+
     </footer>
-      
+   
     <script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>
     <script src="{% static 'pcracks/js/menuchico.js'%}"></script>
 </body>

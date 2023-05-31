@@ -17,6 +17,7 @@ urlpatterns = [
     path('adminel/', admin_eliminar, name='admin_eliminar'),
     path('cuenta/', cuenta, name='cuenta'),
     path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
+    path('modificar/<id>',modificar,name="modificar"),
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
     path('agregarCliente/',agregarCliente,name="agregarCliente"),

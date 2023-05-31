@@ -5,106 +5,98 @@
 
 {% block menu %}
     
+<main class="modificarcuenta">
+    <div class="cabeceramodi">
+        <h1>MODIFICA TU CUENTA CRACK</h1>
 
-<div class="cabecera">
-    <h1>MODIFICA TU CUENTA CRACK</h1>
 
-
-<form action="{% url 'agregarCliente' %}" method="POST" name="formulario" class="formulario" id="formulario">
-    {% csrf_token %}
-    <!-- Grupo: rut -->
-    <div class="formulario__grupo" id="grupo__rut">
-        <label for="rut" class="formulario__label">Rut</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="rut" id="rut" placeholder="Ej: 123456789">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+    <form action="{% url 'modificarCuenta' %}" method="POST" enctype="multipart/form-data" name="formulario" class="formulariomod" id="formulario">
+        {% csrf_token %}
+        <!-- Grupo: rut -->
+        <div class="formulario__grupo" id="grupo__rut">
+            <label for="rut" class="formulario__label">Rut</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.rut_cliente }}" class="formulario__input" name="rut" id="rut" placeholder="Ej: 123456789" readonly>
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El rut debe incluir digito verificador sin guion ni puntos</p>
         </div>
-        <p class="formulario__input-error">El rut debe incluir digito verificador sin guion ni puntos</p>
-    </div>
 
-    <!-- Grupo: Nombre -->
-    <div class="formulario__grupo" id="grupo__nombre">
-        <label for="nombre" class="formulario__label">Nombre</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Primer nombre">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: Nombre -->
+        <div class="formulario__grupo" id="grupo__nombre">
+            <label for="nombre" class="formulario__label">Nombre</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.nombre_cliente }}"  class="formulario__input" name="nombre" id="nombre" placeholder="Primer nombre">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El nombre debe contener mas de 3 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
         </div>
-        <p class="formulario__input-error">El nombre debe contener mas de 3 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
-    </div>
 
-    <!-- Grupo: apellido -->
+        <!-- Grupo: apellido -->
 
-    <div class="formulario__grupo" id="grupo__apellido">
-        <label for="apellido" class="formulario__label">Apellido</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Apellido paterno">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <div class="formulario__grupo" id="grupo__apellido">
+            <label for="apellido" class="formulario__label">Apellido</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.apellido_cliente }}" class="formulario__input" name="apellido" id="apellido" placeholder="Apellido paterno">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El apellido debe contener mas de 2 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
         </div>
-        <p class="formulario__input-error">El apellido debe contener mas de 2 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
-    </div>
 
-    <!-- Grupo: Correo Electronico -->
-    <div class="formulario__grupo" id="grupo__correo">
-        <label for="correo" class="formulario__label">Correo Electrónico</label>
-        <div class="formulario__grupo-input">
-            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label for="correo" class="formulario__label">Correo Electrónico</label>
+            <div class="formulario__grupo-input">
+                <input type="email" value="{{ datos.email_empleado }}" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
         </div>
-        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-    </div>
 
-    <!-- Grupo: Contraseña -->
-    <div class="formulario__grupo" id="grupo__password">
-        <label for="password" class="formulario__label">Contraseña</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="password" id="password">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+            <label for="password" class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.contrasena_cliente }}" class="formulario__input" name="password" id="password">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña tiene que ser de 8 a 20 caracteres.</p>
         </div>
-        <p class="formulario__input-error">La contraseña tiene que ser de 8 a 20 caracteres.</p>
-    </div>
+        
 
-    <!-- Grupo: Contraseña 2 -->
-    <div class="formulario__grupo" id="grupo__password2">
-        <label for="password2" class="formulario__label">Repetir Contraseña</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="password2" id="password2">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">N° Celular +569</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.num_telefonico_cliente }}" class="formulario__input" name="telefono" id="telefono" placeholder="12345678" >
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El numero celular no debe contener +569 ni espacio y el total son 8 digitos</p>
         </div>
-        <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-    </div>
 
-    
-
-    <!-- Grupo: Teléfono -->
-    <div class="formulario__grupo" id="grupo__telefono">
-        <label for="telefono" class="formulario__label">N° Celular +569</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="12345678" >
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: direccion -->
+        <div class="formulario__grupo" id="grupo__direccion">
+            <label for="direccion" class="formulario__label">Dirección</label>
+            <div class="formulario__grupo-input">
+                <input type="text" value="{{ datos.direccion_cliente }}" class="formulario__input" name="direccion" id="direccion" placeholder="Calle #1234, Comuna, Region">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">Dirección debe tener un minimo de 13 letras y solo admite # y comas</p>
         </div>
-        <p class="formulario__input-error">El numero celular no debe contener +569 ni espacio y el total son 8 digitos</p>
-    </div>
 
-    <!-- Grupo: direccion -->
-    <div class="formulario__grupo" id="grupo__direccion">
-        <label for="direccion" class="formulario__label">Dirección</label>
-        <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Calle #1234, Comuna, Region">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        <!-- Grupo: Terminos y Condiciones -->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>No puedes dejar campos vacios</b> </p>
         </div>
-        <p class="formulario__input-error">Dirección debe tener un minimo de 13 letras y solo admite # y comas</p>
+
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">Guardar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Sus cambios se han guardado exitosamente!</p>
+        </div>
+        
+    </form>
     </div>
-
-    <!-- Grupo: Terminos y Condiciones -->
-
-
-    <div class="formulario__grupo formulario__grupo-btn-enviar">
-        <button type="submit" class="formulario__btn">Guardar</button>
-        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Sus cambios se han guardado exitosamente!</p>
-    </div>
-    
-</form>
-</div>
 </main>
 
 <!--<script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>-->

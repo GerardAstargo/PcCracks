@@ -25,7 +25,32 @@ def registro (request):
     return render(request, 'pcracks/registro.html')
 
 def modificarCuenta (request):
-    return render(request, 'pcracks/modificar_cuenta.html')
+    rutC = request.POST['rut']
+    nombreC = request.POST['nombre']
+    apellidoC = request.POST['apellido']
+    direccionC = request.POST['direccion']
+    emailC =  request.POST['correo']
+    numeroC = request.POST['telefono']
+    contrasenaC = request.POST['password']
+
+    cliente = Cliente.objects.get(rut_cliente = rutC)
+    cliente.nombre_cliente = nombreC
+    cliente.apellido_cliente = apellidoC
+    cliente.direccion_cliente = direccionC
+    cliente.email_cliente = emailC
+    cliente.num_telefonico_cliente = numeroC
+    cliente.contrasena_cliente = contrasenaC
+
+    cliente.save()
+    return redirect('cuenta')
+
+def modificar (request, id):
+    cliente = Cliente.objects.get(rut_cliente = id)
+    contexto = {
+        "datos": cliente
+    }
+    
+    return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
 
 def agregarCliente(request):
