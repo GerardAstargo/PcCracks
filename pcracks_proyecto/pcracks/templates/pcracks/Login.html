@@ -1,95 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-  <head>
-    <title>Iniciar Sesion | pcCRACKS</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script
-    src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-    crossorigin="anonymous"></script>
-    <!--libreria jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
-    <link rel="stylesheet" href="{% static 'pcracks/CSS/Login_style.css'%}" />
+	{% load static %}
+<head>
+    <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tienda tecnologica | pcCRACKS </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="{% static 'pcracks/css/Login_style.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
- 
+
+    
 </head>
   <body>
-    <div class = "logo_login">
-        <img src="{% static 'pcracks/fotos/logologin.png'%}" width="350px" height="150px">
-    </div>
+    <section id="sect1" class="sect">
+      <video src="{% static 'pcracks/fotos/fondologin.mp4'%}" autoplay="true" muted="true" loop="true" ></video>
+    
+    <div class="login">
 
-    <!--FORMULARIO CREAR CUENTA-->
-      <div class="container" id="container">
-          <div class="form-container sign-up-container">
-              <form action="#" method="post" id ="register">
-                {% csrf_token %}
-                  <h1>Crear Cuenta</h1>
-                  <label>
-                      <input type="text" name="name" id = "name" placeholder="Nombre" required="" pattern="[a-zA-Z]+"><span class="barra"></span>
-                  </label>
-                  <label>
-                    <input type="number" name="number" id = "number" placeholder=" Ej: +569********" required="" pattern="[0-9]+"><span class="barra"></span>
-                </label>
-                  <label>
-                      <input type="email" name="email" id = "email" placeholder="Correo electronico" required=""><span class="barra"></span>
-                  </label>
-                  <label>
-                      <input type="password" name="password" id = "password" placeholder="Contraseña" required=""><span class="barra"></span>
-                  </label>
-                        <button type = "submit"  class="btn_admin">Crear</button> 
-                       
-                        
-                        <p class="warnings" id="warnings"></p>
+      <h1> <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="" height="100px" >
+        <br>Hola <a href="{% url 'menu_off' %}" class="cuenta_add" style="font-size: 40px;">Crack</a> </h1>
+      
+        <form method="POST" name="formulario" class="formulario" id="formulario">
 
-              </form>
+          <div class="formulario__grupo" id="grupo__correo">
+            <p class="formulario__input-error">Correo invalido</p>
+            <div class="formulario__grupo-input">
+              <input type="email" class="formulario__input" name="correo" id="correo" placeholder="Correo electrónico">
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            
+          </div>          
+          
+          <div class="formulario__grupo" id="grupo__password">
+            <p class="formulario__input-error">La contraseña tiene que ser de 8 a 20 caracteres.</p>
+
+            <div class="formulario__grupo-input">
+              <input type="password" class="formulario__input" name="password" id="password" placeholder="Contraseña">
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
           </div>
-          <!--TERMINO FORMULARIO CREAR CUENTA-->
+           <a class="cuenta_add" href="">¿Olvidaste la contraseña?</a>
 
-          <!--FORMULARIO INICIAR SESION -->
-          <div class="form-container sign-in-container">
-              <form action="#" method="post" id ="login">
-                {% csrf_token%}
-                  <h1>Iniciar Sesión</h1>
-                  <label>
-                    <input type="email" name="" id = "email_login" placeholder="Correo electronico" required=""><span class="barra" required=""></span>
-                  </label>
-                  <label>
-                    <input type="password" name="" id = "password_login" placeholder="Contraseña" required=""><span class="barra" required=""></span>
-                  </label>
-                  <a href="Forgot_password.html">¿Olvidaste la contraseña?</a>
-                  <button  type = "submit" class="btn_admin"><a href="{% url 'menu_on'%}">Ingresar</a></button>
-                  <p class="warnings" id="warnings"></p>
-              </form>
+           <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Hay un campo vacio</b> </p>
           </div>
-          <!--TERMINO FORMULARIO INICIAR SESION-->
 
-          <div class="overlay-container">
-              <div class="overlay">
-                  <div class="overlay-panel overlay-left">
-                      <h1>Iniciar Sesión</h1>
-                      <p>Si ya tienes una cuenta ingresa aqui </p>
-                      <button class="ghost mt-5" id="signIn">Iniciar Sesión</button>
-                  </div>
-                  <div class="overlay-panel overlay-right">
-                      <h1>Crear Cuenta!</h1>
-                      <p>Ingresa aqui si deseas crear una cuenta GRATIS... </p>
-                      <a id="signUp" type = "submit" class="btn_admin">Crear Cuenta</a>
-                  </div>
-              </div>
-          </div>
+           <button type="submit" class="btn btn-primary btn-block btn-large" > 
+            Ingresar </button>    
+            
+        </form>
+        <a href="{% url 'registro' %}"> <button type="" class="btn btn-primary btn-block btn-large" > 
+          Registrarse </button></a>
+
       </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
-    <script src="{% static 'pcracks/Login_js.js'%}"></script>
-    <script src="{% static 'pcracks/js/verificacion_registro.js'}"></script>
-   
+    </section>
+
+    <script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script> 
   </body>
 </html>
 

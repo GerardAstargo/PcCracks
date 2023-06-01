@@ -11,22 +11,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel="stylesheet" href="{% static 'pcracks/css/registro.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+
     
 </head>
 <body>
-	
+
 	<main>
+		<section id="sect1" class="sect">
+			<video src="{% static 'pcracks/fotos/fondologin.mp4'%}" autoplay="true" muted="true" loop="true" ></video>
+		  
+	  
         <header class="cabecera">
             <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="" height="100px" >
             <h1>REGISTRATE CRACK</h1>
             
 
         </header>
-		<a class="cuenta_add" href="">¿Ya tienes una cuenta?</a>
+		<a class="cuenta_add" href="{% url 'login' %}">¿Ya tienes una cuenta?</a>
 		
 		<form action="{% url 'agregarCliente' %}" method="POST" name="formulario" class="formulario" id="formulario">
             {% csrf_token %}
@@ -117,7 +118,7 @@
 			<div class="formulario__grupo" id="grupo__terminos">
 				<label class="formulario__label">
 					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los <a href="">Terminos y condiciones</a>
+					Acepto los <a href="" class="cuenta_add">Terminos y condiciones</a>
 				</label>
 				
 			</div>
@@ -145,6 +146,7 @@
 					</script>
 			{% endfor %}
 		{% endif %}
+	</section>
 	</main>
 
 	

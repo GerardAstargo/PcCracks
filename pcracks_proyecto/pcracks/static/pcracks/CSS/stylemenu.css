@@ -728,9 +728,8 @@ footer img {
 
   .maintabla{
     
-    margin-top: 100PX;
       height: 100%;
-      margin:8% 2% ;
+      margin:80px auto ;
       display: block;
       padding: 0px 30%;
       max-width: 100%;
@@ -738,9 +737,15 @@ footer img {
       text-align: center;
       
   }
+  .maintabla .imagen{
+  font-size: 55px;
+  align-items: center;
+  text-align: center;
+  color: var(--color_botones_primarios);
+  -webkit-text-stroke: 1px black;
+  }
 
-.maintabla h1{
-  margin-top: 80px;
+.maintabla .titulo{
   font-size: 45px;
   align-items: center;
   text-align: center;
@@ -791,10 +796,9 @@ footer img {
 @media screen and (max-width: 800px) {
     .maintabla{
     
-	
+      padding: 0px 10%;
       flex-direction: column;
-        margin:75PX 0% ;
-        display: flex;
+
         
         
     }

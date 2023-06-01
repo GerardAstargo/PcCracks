@@ -5,10 +5,27 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #f3f3f3;
+	background: #ffd2a8c7;
 }
-
+.sect {
+	margin-top: -70px;
+	width: 100%;
+	height: 60%;
+	background-color: #111111e5;
+	color: #fff;
+  }
+  
+  
+  video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 99%;
+	min-height: 99%;
+	z-index: -2;
+  }
 main {
+	
 	max-width: 800px;
 	width: 90%;
 	margin: auto;
@@ -17,11 +34,11 @@ main {
 .cabecera{
   
 	margin-top: 80px;
-	font-size: 45px;
+	font-size: 20px;
 	align-items: center;
 	text-align: center;
-	color: var(--color_botones_primarios);
-	-webkit-text-stroke: 1px black;
+	color: white;
+
 }
 .formulario {
 	display: grid;
@@ -29,6 +46,36 @@ main {
 	gap: 20px;
 
 }
+.cuenta_add {
+	outline: none;
+	text-decoration: none;
+	padding: 3px 1px 0;
+	font-size: 16px;
+  
+  }
+  
+  .cuenta_add:link {
+	color: rgb(255, 123, 0);
+  }
+  
+  .cuenta_add:visited {
+	color: rgb(255, 123, 0);
+  }
+  
+  .cuenta_add:focus {
+	border-bottom: 1px solid;
+	background: #008cff;
+  }
+  
+  .cuenta_add:hover {
+	border-bottom: 1px solid;
+  
+  }
+  
+  .cuenta_add:active {
+	background: var(--color_botones_primarios);
+	color: #000000;
+  }
 
 .formulario__label {
 	display: block;
@@ -40,10 +87,13 @@ main {
 .formulario__grupo-input {
 	position: relative;
 }
-
+:root{
+    --color_botones_primarios: #ff7b00;
+}
 .formulario__input {
+	color: #fff;
 	width: 100%;
-	background: #fff;
+	background: #313131;
 	border: 3px solid transparent;
 	border-radius: 3px;
 	height: 45px;
@@ -81,6 +131,7 @@ main {
 	margin-right: 10px;
 }
 
+
 .formulario__grupo-terminos, 
 .formulario__mensaje,
 .formulario__grupo-btn-enviar {
@@ -112,7 +163,6 @@ main {
 
 .formulario__btn {
 	cursor: pointer;
-    display: block;
     color: black;
     padding: 8px 30px;
     border: 2px solid var(--color_botones_primarios); /*variable*/
