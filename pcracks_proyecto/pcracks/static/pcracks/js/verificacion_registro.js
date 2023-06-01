@@ -1,4 +1,5 @@
 const formulario = document.getElementById('formulario');
+const formulario2 = document.getElementById('formulario2');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
@@ -116,6 +117,33 @@ formulario.addEventListener('submit', (e) => {
 	} else {
 		e.preventDefault();
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		
+		
+	}
+
+});
+
+formulario2.addEventListener('submit', (e) => {
+	
+
+	const terminos = document.getElementById('terminos');
+	if(campos.direccion &&  campos.password ){
+		
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+		
+		
+		
+	} else {
+		e.preventDefault();
+		document.getElementById('formulario__mensaje2').classList.add('formulario__mensaje-activo');
 		
 		
 	}
