@@ -5,6 +5,7 @@
     margin: 0;
     text-decoration: none;
     font-family: 'poppins', sans-serif;
+
     
 }
 :root{
@@ -25,7 +26,7 @@ header{
     height: 70px;
     display: absolute;
     position: fixed;
-    z-index: 100;
+    z-index: 4;
     top: 0px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
     
@@ -86,7 +87,7 @@ header{
 
 .btn_login{
     display: block;
-    color: #000;
+    color: black;
     padding: 8px 30px;
     border: 2px solid var(--color_botones_primarios); /*variable*/
     border-radius: 10px;
@@ -94,6 +95,7 @@ header{
     margin: 10px 7px;
     transition: all 300ms;
     white-space: nowrap;
+    background:rgb(255, 183, 124);
 }
 
 .btn_login:hover{
@@ -171,7 +173,7 @@ header{
         position: absolute; left: 90%;
     }
     .logo{
-        margin-left: 2%;
+        margin-left: -6px;
         margin-top: 3px;
         display: flex;
         align-items: center;
@@ -198,7 +200,8 @@ header{
         align-items: center;
     }
     .box{
-        position: absolute; left: 38%;
+        position: absolute; 
+        left: 32%;
     }
     .opciones{
         margin: 10%;
@@ -468,7 +471,12 @@ header{
     max-width: 300px;
 }
 
-
+footer {
+  background: #1A1E25;
+  align-self: flex-end;
+  width: 100%;
+  text-align: center;
+}
 
 footer p {
     padding: 10px;
@@ -495,20 +503,32 @@ footer img {
     z-index: 100;
 }
 
-.cabecera{
-    max-width: 800px;
+.modificarcuenta {
+  max-width: 800px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 	width: 90%;
-	margin: auto;
-	padding: 40px;
-    text-align: center;
-    margin-top: 2%;
-  }
+	margin: 0 auto;
+	padding: 0px;
+
+}
+.modificarcuenta h1{
+  margin-top: 80px;
+  font-size: 45px;
+  align-items: center;
+  text-align: center;
+  color: var(--color_botones_primarios);
+  -webkit-text-stroke: 1px black;
+
+}
   .formulario {
-      margin-block-end: 4%;
+      width: 80%;
+      align-items: center;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-  
   }
   
   .formulario__label {
@@ -516,25 +536,31 @@ footer img {
       font-weight: 700;
       padding: 10px;
       cursor: pointer;
+      align-items: center;
+      text-align: center;
   }
   
   .formulario__grupo-input {
       position: relative;
   }
+  .formulario__grupo {
+    position: relative;
+    margin: 1%;
+}
   
   .formulario__input {
       width: 100%;
-      background: #fff;
+      background: #eeeeee;
       border: 3px solid transparent;
       border-radius: 3px;
       height: 45px;
-      line-height: 45px;
-      padding: 0 40px 0 10px;
+      align-items: center;
+      text-align: center;
       transition: .3s ease all;
   }
   
   .formulario__input:focus {
-      border: 3px solid #0075FF;
+      border: 3px solid var(--color_botones_primarios);
       outline: none;
       box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
   }
@@ -558,10 +584,6 @@ footer img {
       opacity: 0;
   }
   
-  .formulario__checkbox {
-      margin-right: 10px;
-      
-  }
   
   .formulario__grupo-terminos, 
   .formulario__mensaje,
@@ -593,21 +615,43 @@ footer img {
   }
   
   .formulario__btn {
-      height: 45px;
-      line-height: 45px;
-      width: 30%;
-      background: #963d02;
-      color: #ffffff;
-      font-weight: bold;
-      border: none;
-      border-radius: 3px;
       cursor: pointer;
-      transition: .1s ease all;
+      display: block;
+    color: black;
+    padding: 8px 30px;
+    border: 2px solid var(--color_botones_primarios); /*variable*/
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 7px;
+    transition: all 300ms;
+    white-space: nowrap;
+    background:rgb(255, 183, 124);
+
   }
   
   .formulario__btn:hover {
-      background: #ff6600;
-      box-shadow: 3px 0px 30px rgb(71, 71, 71);
+      background: var(--color_botones_primarios);
+      color: #ffffff;
+  }
+
+  .btn_mod{
+    display: block;
+    color: black;
+    padding: 8px 3px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 450;
+    margin: 10px 7px;
+    transition: all 300ms;
+    white-space: nowrap;
+    background:rgb(255, 124, 124);
+    border: 2px solid red; /*variable*/
+  }
+  
+  .btn_mod:hover{
+    color: white;
+    background:red;
   }
   
   .formulario__mensaje-exito {
@@ -615,6 +659,7 @@ footer img {
       color: #119200;
       display: none;
       z-index: -1;
+      position: absolute;
   }
   
   .formulario__mensaje-exito-activo {
@@ -653,20 +698,54 @@ footer img {
           grid-column: 1;
       }
   
+
       .formulario__btn {
-          width: 100%;
-      }
+        cursor: pointer;
+        display: block;
+      color: black;
+      padding: 8px 30px;
+      border: 2px solid var(--color_botones_primarios); /*variable*/
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 10px 7px;
+      transition: all 300ms;
+      white-space: nowrap;
+      background:rgb(255, 183, 124);
+  
+    }
+    
+    .formulario__btn:hover {
+        background: var(--color_botones_primarios);
+        color: #ffffff;
+    }
+      
   }
-.maintabla{
+
+
+
+  
+
+  .maintabla{
     
-	
-    height: 100%;
-    margin:8% 2% ;
-    display: block;
-    padding: 0px 30%;
-    max-width: 100%;
-    align-items: center;
-    
+    margin-top: 100PX;
+      height: 100%;
+      margin:8% 2% ;
+      display: block;
+      padding: 0px 30%;
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+      
+  }
+
+.maintabla h1{
+  margin-top: 80px;
+  font-size: 45px;
+  align-items: center;
+  text-align: center;
+  color: var(--color_botones_primarios);
+  -webkit-text-stroke: 1px black;
 }
 .maintabla section h1{
     color: var(--color_botones_primarios);
@@ -713,30 +792,14 @@ footer img {
     .maintabla{
     
 	
-       
-        margin:12% 2% ;
+      flex-direction: column;
+        margin:75PX 0% ;
+        display: flex;
         
         
     }
 }
-.cabeceramodi{
-    text-align: center;
-    color: #000;
-}
 
-.formulariomod {
-    margin-block-end: 4%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-
-}
-.modificarcuenta {
-    max-width: 800px;
-	width: 90%;
-	margin:5% auto;
-	padding: 40px;
-}
 
 
 .almacen{
@@ -1162,4 +1225,9 @@ footer img {
   border-radius: 4px;
   background-color: rgb(206, 206, 206);
 }
+
+
+
+
+
 
