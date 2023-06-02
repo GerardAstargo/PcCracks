@@ -100,7 +100,7 @@ formulario.addEventListener('submit', (e) => {
 	
 
 	const terminos = document.getElementById('terminos');
-	if(campos.apellido && campos.nombre && campos.rut && campos.direccion &&  campos.password && campos.correo && campos.telefono && terminos.checked ){
+	if(campos.apellido && campos.nombre && campos.rut && campos.direccion &&  campos.password && campos.correo && campos.telefono){
 		
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

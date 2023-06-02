@@ -12,6 +12,7 @@ urlpatterns = [
     path('mapaOFF/', mapa_off, name='mapa_off'),
     path('mapaON/', mapa_on, name='mapa_on'),
     path('login/', login, name='login'),
+    path('inicioSesion/', inicioSesion, name='inicioSesion'),
     
     path('menuOFFproductos/', menu_off_productos, name='menu_off_productos'),
     path('menuONproductos/', menu_on_productos, name='menu_on_productos'),

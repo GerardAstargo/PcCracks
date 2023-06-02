@@ -85,7 +85,7 @@ def agregarCliente(request):
     user.is_staff = True
     user.save()
     messages.success(request,"Cuenta creada correctamente!")
-    return redirect('login')
+    return redirect('registro')
 
 
 def menu_on (request):
@@ -98,6 +98,9 @@ def mapa_on (request):
     return render (request, 'pcracks/mapaON.html')
 
 def login (request):
+    return render (request, 'pcracks/Login.html')
+
+def inicioSesion (request):
     usuario1 = request.POST['correo']
     contra1 = request.POST['password']
 
@@ -112,7 +115,7 @@ def login (request):
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
-    usuario2 = Cliente.objects.get(email_empleado = usuario1,rut_empleado=contra1)
+    usuario2 = Cliente.objects.get(email_cliente = usuario1,contrasena_cliente=contra1)
     user = authenticate(email=usuario1, password=contra1)
 
     if user is not None:
@@ -121,10 +124,11 @@ def login (request):
             return redirect ('admin')
         else:
             contexto = {"usuario":usuario2}
+            
     else:
         messages.error(request,'Cuenta invalida')
-    return render (request, 'pcracks/menuON.html',contexto)
-
+    
+    return render (request, 'pcracks/menuON.html')
 def recuperarContrasena (request):
 
     return render (request, 'pcracks/recuperarContrasena.html')
