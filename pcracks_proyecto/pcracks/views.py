@@ -45,6 +45,7 @@ def modificarCuenta (request):
     cliente.contrasena_cliente = contrasenaC
 
     cliente.save()
+
     return redirect('cuenta')
 
 def modificar (request, id):
@@ -52,7 +53,7 @@ def modificar (request, id):
     contexto = {
         "datos": cliente
     }
-    
+    messages.success(request,"Modificación realizada correctamente!")
     return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
 
