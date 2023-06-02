@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'pcracks_proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/orcl',
+        'NAME': '127.0.0.1:1521/xe',
         'USER': 'pcracksngm',
         'PASSWORD' : 'pcracks2023', 
         'TEST':{
@@ -135,3 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'cc26de9bb10f05'
+EMAIL_HOST_PASSWORD = '78f9dbc98c38e6'
+EMAIL_PORT = '2525'
+

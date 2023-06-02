@@ -1128,110 +1128,29 @@ footer img {
   text-decoration: none;
 }
 
-.btn_pgadm_in:hover {
-  background-color: #2fb904;
-}
+.btn_pgadm_in:hover {background-color: #2fb904;}
+.btn_pgadm_ed{background-color: #cab600;color: rgb(0, 0, 0);padding: 15px 25px;text-decoration: none;}
 
-.btn_pgadm_ed{
-  background-color: #cab600;
-  color: rgb(0, 0, 0);
-  padding: 15px 25px;
-  text-decoration: none;
-}
+.btn_pgadm_ed:hover {background-color: #ffee00;}
 
-.btn_pgadm_ed:hover {
-  background-color: #ffee00;
-}
+.btn_pgadm_el{background-color: #7c0101;color: white;padding: 15px 25px;text-decoration: none;}
 
-.btn_pgadm_el{
-  background-color: #7c0101;
-  color: white;
-  padding: 15px 25px;
-  text-decoration: none;
-}
+.btn_pgadm_el:hover {background-color: #ff0000;text-decoration-color: #199319;}
 
-.btn_pgadm_el:hover {
-  background-color: #ff0000;
-  text-decoration-color: #199319;
-}
+.in_producto{padding: 2%;background-color: white;margin:40px auto;align-items: center;text-align: center;}
+.boton2{margin-top: 3%;}
+.btn_admin{color: #ffffff;padding: 8px 30px;border: 2px solid black; border-radius: 4px;font-weight: 500;transition: all 300ms;white-space: nowrap;background-color: green;}
 
-.in_producto{
-  padding: 2%;
-  background-color: white;
-  margin:40px auto;
-  align-items: center;
-  text-align: center;
+.btn_admin:hover{color: green;background:white;}
+
+.btn_admined{color: #000000;padding: 8px 30px;border: 2px solid black;border-radius: 4px;font-weight: 500;transition: all 300ms;white-space: nowrap;background-color: rgb(211, 211, 6);}
+.btn_admined:hover{color: rgb(221, 221, 221);background:rgb(92, 94, 0);}
 
 
-}
-.boton2{
-  margin-top: 3%;
-}
-.btn_admin{
-  color: #ffffff;
-  padding: 8px 30px;
-  border: 2px solid black; /*variable*/
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 300ms;
-  white-space: nowrap;
-  background-color: green;
-}
+.btn_adminel{color: #ffffff;padding: 8px 30px;border: 2px solid black;border-radius: 4px;font-weight: 500;transition: all 300ms;white-space: nowrap;background-color: rgb(211, 6, 6);}
 
-.btn_admin:hover{
-  color: green;
-  background:white;
-}
-
-.btn_admined{
-  color: #000000;
-  padding: 8px 30px;
-  border: 2px solid black; /*variable*/
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 300ms;
-  white-space: nowrap;
-  background-color: rgb(211, 211, 6);
-}
-
-.btn_admined:hover{
-  color: rgb(221, 221, 221);
-  background:rgb(92, 94, 0);
-}
+.btn_adminel:hover{color: rgb(243, 0, 0);background:rgb(255, 255, 255);}
 
 
-.btn_adminel{
-  color: #ffffff;
-  padding: 8px 30px;
-  border: 2px solid black; /*variable*/
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 300ms;
-  white-space: nowrap;
-  background-color: rgb(211, 6, 6);
-}
-
-.btn_adminel:hover{
-  color: rgb(243, 0, 0);
-  background:rgb(255, 255, 255);
-}
-
-
-.boton3{
-  font-size: 20px;
-  margin-right: 2%;
-  text-align: right;
-}
-
-.btn_cuenta_admin{
-  color: #ffffff;
-  border: 1px solid black; /*variable*/
-  border-radius: 4px;
-  background-color: rgb(206, 206, 206);
-}
-
-
-
-
-
-
+.boton3{font-size: 20px;margin-right: 2%;text-align: right;}
+.btn_cuenta_admin{color: #fff;border: 1px solid black;border-radius: 4px;background-color: rgb(206, 206, 206);}

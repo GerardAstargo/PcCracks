@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from django.contrib import messages
+from django.core.mail import EmailMessage
+from django.urls import reverse
+
 
 # Create your views here.
 def menu_off (request):
@@ -86,8 +89,9 @@ def mapa_on (request):
 def login (request):
     return render (request, 'pcracks/Login.html')
 
-def forgot_password (request):
-    return render (request, 'pcracks/Forgot_password.html')
+def recuperarContrasena (request):
+
+    return render (request, 'pcracks/recuperarContrasena.html')
 
 def menu_off_productos (request):
     return render (request, 'pcracks/menuOFFproductos.html')

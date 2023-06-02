@@ -3,13 +3,16 @@ from django.urls import path, include
 from .views import *
 
 
+
+
+
 urlpatterns = [
     path('', menu_off, name='menu_off'),
     path('menuON/', menu_on, name='menu_on'),
     path('mapaOFF/', mapa_off, name='mapa_off'),
     path('mapaON/', mapa_on, name='mapa_on'),
     path('login/', login, name='login'),
-    path('Forgot_password/', forgot_password, name='forgot_password'),
+    
     path('menuOFFproductos/', menu_off_productos, name='menu_off_productos'),
     path('menuONproductos/', menu_on_productos, name='menu_on_productos'),
     path('admin/', admin_agregar, name='admin_agregar'),
@@ -43,6 +46,6 @@ urlpatterns = [
     path('menuFastOFFFuente/', menu_fast_off_fuente, name='menu_fast_off_fuente'),
     path('menuFastOFFAlmacenamiento/', menu_fast_off_almacenamiento, name='menu_fast_off_almacenamiento'),
 
-
+    path('recuperarContrasena/',recuperarContrasena, name='recuperarContrasena'),
 
 ]
