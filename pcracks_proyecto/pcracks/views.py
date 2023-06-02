@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import *
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import authenticate,login, logout
 
 
 
@@ -96,7 +98,32 @@ def mapa_on (request):
     return render (request, 'pcracks/mapaON.html')
 
 def login (request):
-    return render (request, 'pcracks/Login.html')
+    usuario1 = request.POST['correo']
+    contra1 = request.POST['password']
+
+    try:
+        user1 = User.objects.get(email = usuario1)
+    except User.DoesNotExist:
+        messages.error(request,'El correo o la contraseña son incorrectas')
+        return redirect('login')
+
+    pass_valida = check_password(contra1, user1.password)
+    if not pass_valida:
+        messages.error(request,'El correo o la contraseña son incorrectas')
+        return redirect('login')
+
+    usuario2 = Cliente.objects.get(email_empleado = usuario1,rut_empleado=contra1)
+    user = authenticate(email=usuario1, password=contra1)
+
+    if user is not None:
+        login(request, user)
+        if (usuario2.tipousuario.idTipoUsuario == 1):
+            return redirect ('admin')
+        else:
+            contexto = {"usuario":usuario2}
+    else:
+        messages.error(request,'Cuenta invalida')
+    return render (request, 'pcracks/menuON.html',contexto)
 
 def recuperarContrasena (request):
 
