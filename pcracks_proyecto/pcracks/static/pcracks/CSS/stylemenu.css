@@ -167,7 +167,7 @@ header{
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 1380px){
+@media screen and (max-width: 1300px){
     .toggle {
         display: flex;
         position: absolute; left: 90%;
