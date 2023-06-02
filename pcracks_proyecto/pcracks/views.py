@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from django.contrib import messages
-from django.core.mail import EmailMessage
-from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -45,6 +45,7 @@ def modificarCuenta (request):
     cliente.contrasena_cliente = contrasenaC
 
     cliente.save()
+    messages.success(request,"Modificación realizada correctamente!")
 
     return redirect('cuenta')
 
@@ -53,7 +54,7 @@ def modificar (request, id):
     contexto = {
         "datos": cliente
     }
-    messages.success(request,"Modificación realizada correctamente!")
+    
     return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
 
@@ -74,8 +75,15 @@ def agregarCliente(request):
                            apellido_cliente = apellidoC, direccion_cliente = direccionC,
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
                            contrasena_cliente = contrasenaC)
+    user=User.objects.create_user(
+        username= emailC,
+        email = emailC,
+        password = contrasenaC
+)
+    user.is_staff = True
+    user.save()
     messages.success(request,"Cuenta creada correctamente!")
-    return redirect('registro')
+    return redirect('login')
 
 
 def menu_on (request):

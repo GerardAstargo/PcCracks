@@ -32,21 +32,21 @@
 			<form action="{% url 'agregarCliente' %}" method="POST" name="formulario" class="formulario" id="formulario">
 				{% csrf_token %}
 				<!-- Grupo: rut -->
-				{% if rut == Cliente.rut_cliente %}
+				<!-- Grupo: rut -->
+				<!--{% if rut == Cliente.rut_cliente %}
 					<p class="formulario__input-error">Ya existe una cuenta con el Rut ingresado</p>
 				{% else %}
 					<p class="formulario__input-error">El rut debe incluir digito verificador sin guion ni puntos</p>
-				{% endif %}
+				{% endif %}-->
 				
-					<div class="formulario__grupo" id="grupo__rut">
-						<label for="rut" class="formulario__label">Rut</label>
-						<div class="formulario__grupo-input">
-							<input type="text" class="formulario__input" name="rut" id="rut" placeholder="Ej: 123456789">
-							<i class="formulario__validacion-estado fas fa-times-circle"></i>
-						</div>
-
-						
+				<div class="formulario__grupo" id="grupo__rut">
+					<label for="rut" class="formulario__label">Rut</label>
+					<div class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="rut" id="rut" placeholder="Ej: 123456789">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
 					</div>
+					<p class="formulario__input-error">El rut debe incluir digito verificador sin guion ni puntos</p>
+				</div>
 
 				<!-- Grupo: Nombre -->
 				<div class="formulario__grupo" id="grupo__nombre">
