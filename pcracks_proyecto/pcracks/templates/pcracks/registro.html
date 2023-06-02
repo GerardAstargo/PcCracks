@@ -141,20 +141,6 @@
 
 					
 			</form>
-			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-			{% if messages %}
-				{% for m in messages %}
-						<script>
-							Swal.fire({
-								"title": "Felicitaciones!",
-								"text": "{{m}}",
-								"icon": "success",
-								"backdrop": "True",
-								"timer": "2000"
-							})
-						</script>
-				{% endfor %}
-			{% endif %}
 		</section>
 	</main>
 
