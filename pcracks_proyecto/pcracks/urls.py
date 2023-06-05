@@ -14,7 +14,10 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('inicioSesion/', inicioSesion, name='inicioSesion'),
     path('logout/', logout_request, name='logout'),
+    path('plantillaON/', plantillaON, name='plantillaON'),
     
+
+
     path('menuOFFproductos/', menu_off_productos, name='menu_off_productos'),
     path('menuONproductos/', menu_on_productos, name='menu_on_productos'),
     path('admin/', admin_agregar, name='admin_agregar'),
@@ -23,6 +26,7 @@ urlpatterns = [
     path('cuenta/', cuenta, name='cuenta'),
     path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
     path('modificar/<id>',modificar,name="modificar"),
+
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
     path('agregarCliente/',agregarCliente,name="agregarCliente"),

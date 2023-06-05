@@ -12,6 +12,9 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def menu_off (request):
     return render(request, 'pcracks/menuOFF.html')
+def plantillaON (request):
+    return render(request, 'pcracks/zplantillaON.html')
+
 
 
 
@@ -85,7 +88,7 @@ def agregarCliente(request):
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
                            contrasena_cliente = contrasenaC)
     user=User.objects.create_user(
-        username= emailC,
+        username= nombreC,
         email = emailC,
         password = contrasenaC
 )
@@ -128,6 +131,10 @@ def inicioSesion (request):
         login(request, user)
     
     return render (request, 'pcracks/menuON.html')
+def logout_request (request):
+    logout(request)
+    return redirect(request, 'menu_off')
+
 def recuperarContrasena (request):
 
     return render (request, 'pcracks/recuperarContrasena.html')
