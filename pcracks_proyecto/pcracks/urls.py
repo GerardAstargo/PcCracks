@@ -13,6 +13,7 @@ urlpatterns = [
     path('mapaON/', mapa_on, name='mapa_on'),
     path('login/', login, name='login'),
     path('inicioSesion/', inicioSesion, name='inicioSesion'),
+    path('logout/', logout_request, name='logout'),
     
     path('menuOFFproductos/', menu_off_productos, name='menu_off_productos'),
     path('menuONproductos/', menu_on_productos, name='menu_on_productos'),

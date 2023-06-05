@@ -5,11 +5,18 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here.
 def menu_off (request):
+    return render(request, 'pcracks/menuOFF.html')
+
+
+
+def logout_request (request):
+    logout(request)
     return render(request, 'pcracks/menuOFF.html')
 
 
@@ -115,18 +122,10 @@ def inicioSesion (request):
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
-    usuario2 = Cliente.objects.get(email_cliente = usuario1,contrasena_cliente=contra1)
     user = authenticate(email=usuario1, password=contra1)
 
     if user is not None:
         login(request, user)
-        if (usuario2.tipousuario.idTipoUsuario == 1):
-            return redirect ('admin')
-        else:
-            contexto = {"usuario":usuario2}
-            
-    else:
-        messages.error(request,'Cuenta invalida')
     
     return render (request, 'pcracks/menuON.html')
 def recuperarContrasena (request):
