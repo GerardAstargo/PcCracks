@@ -28,7 +28,7 @@ def lista_clientes(request):
 def detalle_cliente(request, id):
 
     try:
-        cliente = Cliente.objects.get(Rut = id)
+        cliente = Cliente.objects.get(rut_cliente = id)
     except Cliente.DoesNotExist:
         return Response(status = status.HTTP_404_NOT_FOUND)
     if request.method == 'PUT':
