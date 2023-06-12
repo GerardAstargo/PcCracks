@@ -1,7 +1,7 @@
 {% extends 'pcracks/zplantillaON.html' %}
 {% load static %}
 
-
+{% if user.is_authenticated %}
     {% block menu %}
 
     <main class="maintabla">
@@ -32,7 +32,7 @@
         {% endfor %}
     </main>
     {% endblock menu %}
-
+{% else %}
     {% block menu2 %}
 
     <main class="maintabla">
@@ -41,5 +41,7 @@
 
     </main>
     {% endblock menu2 %}
+{% endif %}
+
 
 
