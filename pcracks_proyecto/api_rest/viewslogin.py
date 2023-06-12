@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 
 
 @api_view(['POST'])
-def login (request):
+def inicio (request):
     data = JSONParser().parse(request)
 
     username = data['username']
