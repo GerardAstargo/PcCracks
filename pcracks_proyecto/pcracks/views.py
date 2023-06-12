@@ -92,7 +92,7 @@ def agregarCliente(request):
         email = emailC,
         password = contrasenaC
 )
-    user.is_staff = True
+    user.is_staff = False
     user.save()
     messages.success(request,"Cuenta creada correctamente!")
     return redirect('registro')
@@ -129,8 +129,8 @@ def inicioSesion (request):
 
     if user is not None:
         login(request, user)
-    
-    return render (request, 'pcracks/menuON.html')
+        return render (request, 'pcracks/menuON.html')
+        
 def logout_request (request):
     logout(request)
     return redirect(request, 'menu_off')
