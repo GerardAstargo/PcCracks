@@ -14,12 +14,12 @@ def inicio (request):
     data = JSONParser().parse(request)
 
     username = data['username']
-    password = data['password']
+    password= data['password']
     
     try:
-        user = User.objects.get(username=username)
+        user = User.objects.get(username = username)
     except User.DoesNotExist:
-        return Response("Correo invalido")
+        return Response("Usuario invalido")
     
     pass_valido = check_password (password, user.password)
     if not pass_valido:
