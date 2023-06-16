@@ -1,0 +1,22 @@
+{% extends 'pcracks/zplantilla.html' %}
+{% load static %}
+
+{% if user.is_authenticated %}
+    {% block menu %}
+
+    <main class="maintabla">
+            <i class="imagen fa fa-user"></i>
+            <H1 class="titulo">INICIA SESIÓN </H1>
+
+    </main>
+    {% endblock menu %}
+{% else %}
+    {% block menu2 %}
+
+
+    </main>
+    {% endblock menu2 %}
+{% endif %}
+
+
+

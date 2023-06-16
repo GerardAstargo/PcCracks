@@ -24,15 +24,16 @@
         </section>
         <div>
             <a href="{% url 'modificar' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+            <a href="{% url 'eliminarUsuario' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true" ></i> Eliminar</a>
         </div>
-        
-        
 
+        
+        
         
         {% endfor %}
     </main>
     {% endblock menu %}
-{% else %}
+{% else%}
     {% block menu2 %}
 
     <main class="maintabla">

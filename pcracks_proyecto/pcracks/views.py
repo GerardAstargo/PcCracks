@@ -69,6 +69,10 @@ def modificar (request, id):
     
     return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
+def eliminarUsuario (request, id):
+    cliente = Cliente.objects.get(rut_cliente = id)
+    cliente.delete()
+    return redirect('cuenta')
 
 def agregarCliente(request):
 
@@ -163,6 +167,9 @@ def cuenta (request):
     }
 
     return render (request, 'pcracks/cuenta.html', contexto)
+
+def cuentaoff (request):
+   return render (request, 'pcracks/cuentaoff.html')
 
 def carrito (request):
     return render (request, 'pcracks/carrito.html')

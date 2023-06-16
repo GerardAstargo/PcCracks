@@ -24,8 +24,10 @@ urlpatterns = [
     path('admined/', admin_editar, name='admin_editar'),
     path('adminel/', admin_eliminar, name='admin_eliminar'),
     path('cuenta/', cuenta, name='cuenta'),
+    path('cuentaoff/', cuentaoff, name='cuentaoff'),
     path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
     path('modificar/<id>',modificar,name="modificar"),
+    path('eliminarUsuario/<id>',eliminarUsuario,name="eliminarUsuario"),
 
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
