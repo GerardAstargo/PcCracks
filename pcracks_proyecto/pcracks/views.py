@@ -129,11 +129,12 @@ def inicioSesion (request):
 
     if user is not None:
         login(request, user)
-        return render (request, 'pcracks/menuON.html')
+        
+    return render (request, 'pcracks/menuON.html')
         
 def logout_request (request):
     logout(request)
-    return redirect(request, 'menu_off')
+    return redirect('menu_off')
 
 def recuperarContrasena (request):
 
