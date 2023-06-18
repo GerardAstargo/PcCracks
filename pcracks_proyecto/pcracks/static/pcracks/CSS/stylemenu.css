@@ -828,7 +828,7 @@ footer img {
     margin: 20px 30px;
     position: relative;
     width: 320px;
-    height: 480px;
+    height: 350px;
     background: #5a5a5a;
     border-radius: 20px;
     overflow: hidden;
@@ -841,7 +841,7 @@ footer img {
     top: -50%;
     width: 100%;
     height: 100%;
-    background: #ff7b00;
+    background: #7c7c7c;
     transform: skewY(345deg);
     transition: 0.5s;
   }
@@ -883,7 +883,7 @@ footer img {
   }
   
   .card .contentBox h3 {
-    font-size: 18px;
+    font-size: 23px;
     color: white;
     font-weight: 500;
     text-transform: capitalize;
@@ -901,7 +901,7 @@ footer img {
   
   .card .contentBox .price {
     font-size: 24px;
-    color: var(--color_botones_primarios);
+    color: white;
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -1090,31 +1090,9 @@ footer img {
   background-color: #000;
 }
 
-.TITULO_ADMIN{
-  
-  text-align: center;
-  background: linear-gradient(blue, rgb(38, 125, 255));
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: text 4s linear infinite;
-  font-size: 50px;
-}
 
-@keyframes text {
-  0%{
-    filter: hue-rotate(0deg);
-  }
-  100%{
-    filter: hue-rotate(360deg);
-  }
-}
 
-@media screen and (max-width: 1580px){
-  .TITULO_ADMIN {
-      margin: 70px 3px;
-  }
-}
+
 .boton_menuadmin{
   align-items: center;
   text-align: center;

@@ -20,18 +20,22 @@ urlpatterns = [
 
     path('menuOFFproductos/', menu_off_productos, name='menu_off_productos'),
     path('menuONproductos/', menu_on_productos, name='menu_on_productos'),
-    path('admin/', admin_agregar, name='admin_agregar'),
-    path('admined/', admin_editar, name='admin_editar'),
-    path('adminel/', admin_eliminar, name='admin_eliminar'),
+    path('administrar/', administrar, name='administrar'),
+    path('adminProductos/', adminProductos, name='adminProductos'),
+    path('adminUsuarios/', adminUsuarios, name='adminUsuarios'),
     path('cuenta/', cuenta, name='cuenta'),
     path('cuentaoff/', cuentaoff, name='cuentaoff'),
     path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
     path('modificar/<id>',modificar,name="modificar"),
+    path('comprar/<id>',comprar,name="comprar"),
+    path('comprarProducto/', comprarProducto, name='comprarProducto'),
     path('eliminarUsuario/<id>',eliminarUsuario,name="eliminarUsuario"),
 
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
+    path('producto/', producto, name='producto'),
     path('agregarCliente/',agregarCliente,name="agregarCliente"),
+    path('agregarProducto/',agregarProducto,name="agregarProducto"),
 
 
     

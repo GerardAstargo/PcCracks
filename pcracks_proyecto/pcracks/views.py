@@ -39,6 +39,10 @@ def registro (request):
     
     return render(request, 'pcracks/registro.html')
 
+def producto (request):
+    
+    return render(request, 'pcracks/agregar_producto.html')
+
 def modificarCuenta (request):
     rutC = request.POST['rut']
     nombreC = request.POST['nombre']
@@ -61,6 +65,8 @@ def modificarCuenta (request):
 
     return redirect('cuenta')
 
+
+
 def modificar (request, id):
     cliente = Cliente.objects.get(rut_cliente = id)
     contexto = {
@@ -69,10 +75,38 @@ def modificar (request, id):
     
     return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
+def comprarProducto (request):
+    codP = request.POST['rut']
+    marcaP = request.POST['nombre']
+    modeloP = request.POST['apellido']
+    descripcionP = request.POST['direccion']
+    disponibilidadP =  request.POST['correo']
+    precioP = request.POST['telefono']
+    categoriaP = request.POST['password']
+
+    producto = Producto.objects.get(cod_producto = codP)
+    producto.marca = marcaP
+    producto.modelo = modeloP
+    producto.descripcion = descripcionP
+    producto.disponibilidad = disponibilidadP
+    producto.precio = precioP
+    producto.categoria = categoriaP
+
+
+    return redirect('cuenta')
+
+def comprar (request, id):
+    producto = Producto.objects.get(cod_producto = id)
+    contexto = {
+        "listaProducto": producto
+    }
+    
+    return render(request, 'pcracks/PRODUCTOS/CPU/i511th.html', contexto)
+
 def eliminarUsuario (request, id):
     cliente = Cliente.objects.get(rut_cliente = id)
     cliente.delete()
-    return redirect('cuenta')
+    return redirect('adminUsuarios')
 
 def agregarCliente(request):
 
@@ -101,8 +135,30 @@ def agregarCliente(request):
     messages.success(request,"Cuenta creada correctamente!")
     return redirect('registro')
 
+def agregarProducto(request):
+
+    codP = request.POST['rut']
+    marcaP = request.POST['nombre']
+    modeloP = request.POST['apellido']
+    descripcionP = request.POST['direccion']
+    disponibilidadP =  request.POST['correo']
+    precioP = request.POST['telefono']
+    categoriaP = request.POST['password']
+
+
+    
+
+    Producto.objects.create(cod_producto = codP, marca = marcaP,
+                           modelo = modeloP, descripcion = descripcionP,
+                           disponibilidad = disponibilidadP, precio = precioP,
+                           categoria = categoriaP)
+
+    messages.success(request,"Producto agregado correctamente!")
+    return redirect('registro')
+
 
 def menu_on (request):
+    
     return render (request, 'pcracks/menuON.html')
 
 def mapa_off (request):
@@ -119,13 +175,14 @@ def inicioSesion (request):
     contra1 = request.POST['password']
 
     try:
-        user1 = User.objects.get(email = usuario1)
+        user1 = User.objects.filter(email = usuario1)
     except User.DoesNotExist:
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
-    pass_valida = check_password(contra1, user1.password)
-    if not pass_valida:
+    try:
+        pass_valida = User.objects.filter(password = contra1)
+    except User.DoesNotExist:
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
@@ -148,16 +205,32 @@ def menu_off_productos (request):
     return render (request, 'pcracks/menuOFFproductos.html')
 
 def menu_on_productos (request):
-    return render (request, 'pcracks/menuONproductos.html')
+    productos = Producto.objects.all()
+    contexto ={
+        "listaProducto": productos
+    }
+    return render (request, 'pcracks/menuONproductos.html',contexto)
 
-def admin_agregar (request):
-    return render (request, 'pcracks/admin.html')
+def administrar (request):
+    return render (request, 'pcracks/administrar.html')
 
-def admin_editar (request):
-    return render (request, 'pcracks/admined.html')
+def adminProductos(request):
 
-def admin_eliminar (request):
-    return render (request, 'pcracks/adminel.html')
+    productos = Producto.objects.all()
+    contexto ={
+        "listaProducto": productos
+    }
+
+    return render (request, 'pcracks/administrar_productos.html',contexto)
+
+def adminUsuarios (request):
+
+    cuenta = Cliente.objects.all()
+    contexto ={
+        "listaCliente": cuenta
+    }
+
+    return render (request, 'pcracks/administrar_usuarios.html', contexto)
 
 def cuenta (request):
     

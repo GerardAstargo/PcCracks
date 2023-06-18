@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin | pcCRACKS </title>
+    <link rel="stylesheet" href="{% static 'pcracks/css/admin.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
+    
+    
+
+    
+    
+</head>
+
+<body>   
+    
+    
+    <header>
+        <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo" width="200" height="170">
+        <H1 CLASS="TITULO_ADMIN">Opciones De Administrador</H1>
+        <div class="opcion_espacio">
+        <a href="{% url 'adminProductos'%}" class="btn_opciones"><i class="fa fa-cog fa-spin fa-fw"></i>PRODUCTOS</a>
+        </div>
+
+
+        <div class="opcion_espacio">
+        <a href="{% url 'adminUsuarios'%}" class="btn_opciones"><i class="imagen fa fa-user "></i>USUARIOS</a>
+        </div>
+    </header>
+    <main>
+
+    </main>
+
+
+</body>
+
+    </html>

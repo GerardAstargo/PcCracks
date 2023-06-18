@@ -7,30 +7,31 @@
     <main class="maintabla">
             <i class="imagen fa fa-user"></i>
             <H1 class="titulo">DATOS CUENTA </H1>
-        {% for m in listaCliente %}
-        
-        <section>
-            <article>
-                <h1>RUT</h1> <P>{{ m.rut_cliente }}</P>
-                <h1>NOMBRE</h1> <P>{{ m.nombre_cliente }}</P>
-                <h1>APELLIDO</h1> <P>{{ m.apellido_cliente }}</P>
-                <h1>DIRECCION</h1> <P>{{ m.direccion_cliente }}</P>
-                <h1>CORREO</h1> <P>{{ m.email_cliente }}</P>
-                <h1>TELEFONO</h1> <P>{{ m.num_telefonico_cliente }}</P>
-                <h1>CONTRASEÑA</h1> <P>***********</P>
-            </article>
-            
-            
-        </section>
-        <div>
-            <a href="{% url 'modificar' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-            <a href="{% url 'eliminarUsuario' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true" ></i> Eliminar</a>
-        </div>
 
-        
-        
-        
-        {% endfor %}
+            {% for m in listaCliente %}
+            
+            <section>
+                <article>
+                    <h1>RUT</h1> <P>{{ m.rut_cliente }}</P>
+                    <h1>NOMBRE</h1> <P>{{ m.nombre_cliente }}</P>
+                    <h1>APELLIDO</h1> <P>{{ m.apellido_cliente }}</P>
+                    <h1>DIRECCION</h1> <P>{{ m.direccion_cliente }}</P>
+                    <h1>CORREO</h1> <P>{{ m.email_cliente }}</P>
+                    <h1>TELEFONO</h1> <P>{{ m.num_telefonico_cliente }}</P>
+                    <h1>CONTRASEÑA</h1> <P>***********</P>
+                </article>
+                
+                
+            </section>
+            <div>
+                <a href="{% url 'modificar' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+                <a href="{% url 'eliminarUsuario' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true" ></i> Eliminar</a>
+            </div>
+
+            
+            
+            {% endfor %}    
+
     </main>
     {% endblock menu %}
 {% else%}
