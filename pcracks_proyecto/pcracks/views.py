@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import AnonymousUser 
 
 
 
@@ -19,9 +20,13 @@ def plantillaON (request):
 
 
 def logout_request (request):
-    logout(request)
+    num=0
+    if num < 0:
+        logout(request)
+        counter += 1
+        logout_request(num - 1)
     return render(request, 'pcracks/menuOFF.html')
-
+    
 
 
 def buscar(request):
@@ -75,6 +80,37 @@ def modificar (request, id):
     
     return render(request, 'pcracks/modificar_cuenta.html', contexto)
 
+def modificarProductoadmin (request):
+    codP = request.POST['rut']
+    marcaP = request.POST['nombre']
+    modeloP = request.POST['apellido']
+    descripcionP = request.POST['direccion']
+    disponibilidadP =  request.POST['correo']
+    precioP = request.POST['telefono']
+    categoriaP = request.POST['password']
+
+    producto = Producto.objects.get(cod_producto = codP)
+    producto.marca = marcaP
+    producto.modelo = modeloP
+    producto.descripcion = descripcionP
+    producto.disponibilidad = disponibilidadP
+    producto.precio = precioP
+    producto.categoria = categoriaP
+
+    Producto.save()
+    messages.success(request,"Modificación realizada correctamente!")
+
+    return redirect('adminProductos')
+
+
+def modificarProducto (request, id):
+    producto = Producto.objects.get(cod_producto = id)
+    contexto = {
+        "datos": producto
+    }
+    
+    return render(request, 'pcracks/modificar_producto.html', contexto)
+
 def comprarProducto (request):
     codP = request.POST['rut']
     marcaP = request.POST['nombre']
@@ -108,7 +144,9 @@ def eliminarUsuario (request, id):
     cliente.delete()
     return redirect('adminUsuarios')
 
+
 def agregarCliente(request):
+
 
     rutC = request.POST['rut']
     nombreC = request.POST['nombre']
@@ -126,6 +164,7 @@ def agregarCliente(request):
                            email_cliente = emailC, num_telefonico_cliente = numeroC,
                            contrasena_cliente = contrasenaC)
     user=User.objects.create_user(
+
         username= nombreC,
         email = emailC,
         password = contrasenaC
@@ -175,27 +214,26 @@ def inicioSesion (request):
     contra1 = request.POST['password']
 
     try:
-        user1 = User.objects.filter(email = usuario1)
+        user1 = User.objects.get(email = usuario1)
     except User.DoesNotExist:
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
-    try:
-        pass_valida = User.objects.filter(password = contra1)
-    except User.DoesNotExist:
+    pass_valida = check_password(contra1, user1.password)
+    if not pass_valida:
         messages.error(request,'El correo o la contraseña son incorrectas')
         return redirect('login')
 
     user = authenticate(email=usuario1, password=contra1)
 
     if user is not None:
+        user.is_authenticated = True
         login(request, user)
         
+
     return render (request, 'pcracks/menuON.html')
         
-def logout_request (request):
-    logout(request)
-    return redirect('menu_off')
+
 
 def recuperarContrasena (request):
 
@@ -232,14 +270,20 @@ def adminUsuarios (request):
 
     return render (request, 'pcracks/administrar_usuarios.html', contexto)
 
-def cuenta (request):
-    
-    cuenta = Cliente.objects.all()
-    contexto ={
-        "listaCliente": cuenta
-    }
 
-    return render (request, 'pcracks/cuenta.html', contexto)
+def cuenta (request):
+
+            cuenta = Cliente.objects.all()
+            contexto ={
+            "listaCliente": cuenta
+            }
+            return render(request, 'pcracks/cuenta.html', contexto)
+
+        
+
+        
+
+    
 
 def cuentaoff (request):
    return render (request, 'pcracks/cuentaoff.html')

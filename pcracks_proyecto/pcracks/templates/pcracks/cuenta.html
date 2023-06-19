@@ -1,7 +1,7 @@
 {% extends 'pcracks/zplantillaON.html' %}
 {% load static %}
 
-{% if user.is_authenticated %}
+
     {% block menu %}
 
     <main class="maintabla">
@@ -25,7 +25,6 @@
             </section>
             <div>
                 <a href="{% url 'modificar' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-                <a href="{% url 'eliminarUsuario' m.rut_cliente %}" class="btn_cuenta"><i class="fa fa-pencil" aria-hidden="true" ></i> Eliminar</a>
             </div>
 
             
@@ -34,16 +33,9 @@
 
     </main>
     {% endblock menu %}
-{% else%}
-    {% block menu2 %}
 
-    <main class="maintabla">
-            <i class="imagen fa fa-user"></i>
-            <H1 class="titulo">Inicia Sesion</H1>
 
-    </main>
-    {% endblock menu2 %}
-{% endif %}
+
 
 
 

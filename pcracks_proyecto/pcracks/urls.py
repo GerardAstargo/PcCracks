@@ -13,8 +13,9 @@ urlpatterns = [
     path('mapaON/', mapa_on, name='mapa_on'),
     path('login/', login, name='login'),
     path('inicioSesion/', inicioSesion, name='inicioSesion'),
-    path('logout/', logout_request, name='logout'),
+    path("logout/", logout_request, name="logout"),
     path('plantillaON/', plantillaON, name='plantillaON'),
+    
     
 
 
@@ -30,6 +31,8 @@ urlpatterns = [
     path('comprar/<id>',comprar,name="comprar"),
     path('comprarProducto/', comprarProducto, name='comprarProducto'),
     path('eliminarUsuario/<id>',eliminarUsuario,name="eliminarUsuario"),
+
+
 
     path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),

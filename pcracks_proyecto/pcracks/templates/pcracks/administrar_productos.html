@@ -37,7 +37,6 @@
                 <h1>CODIGO</h1> <P>{{ m.cod_producto }}</P>
                 <h1>MARCA</h1> <P>{{ m.marca }}</P>
                 <h1>MODELO</h1> <P>{{ m.modelo }}</P>
-                <h1>DESCRIPCION</h1> <P>{{ m.descripcion }}</P>
                 <h1>DISPONIBILIDAD</h1> <P>{{ m.disponibilidad }}</P>
                 <h1>PRECIO</h1> <P>{{ m.precio }}</P>
                 <h1>CATEGORIA</h1> <P>{{ m.categoria }}</P>
@@ -48,7 +47,7 @@
         <div>
 
                 
-                <a class="btn btn-default btn-sm" href="#"><i class="fa fa-unlock"></i> Hacer Administrador</a>
+                <a class="btn btn-default btn-sm" href="{% url 'modificarProducto' m.cod_producto %}"><i class="fa fa-unlock"></i> Hacer Administrador</a>
         </div>
 
         {% endfor %}
