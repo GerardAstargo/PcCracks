@@ -106,7 +106,7 @@ def modificarProductoadmin (request):
 def modificarProducto (request, id):
     producto = Producto.objects.get(cod_producto = id)
     contexto = {
-        "datos": producto
+        "dato": producto
     }
     
     return render(request, 'pcracks/modificar_producto.html', contexto)
@@ -145,6 +145,12 @@ def eliminarUsuario (request, id):
     return redirect('adminUsuarios')
 
 
+def eliminarProducto (request, id):
+    producto = Producto.objects.get(cod_producto = id)
+    producto.delete()
+    return redirect('adminProductos')
+
+
 def agregarCliente(request):
 
 
@@ -176,13 +182,13 @@ def agregarCliente(request):
 
 def agregarProducto(request):
 
-    codP = request.POST['rut']
-    marcaP = request.POST['nombre']
-    modeloP = request.POST['apellido']
-    descripcionP = request.POST['direccion']
-    disponibilidadP =  request.POST['correo']
-    precioP = request.POST['telefono']
-    categoriaP = request.POST['password']
+    codP = request.POST['codigo']
+    marcaP = request.POST['marca']
+    modeloP = request.POST['modelo']
+    descripcionP = request.POST['descripcion']
+    disponibilidadP =  request.POST['disponibilidad']
+    precioP = request.POST['precio']
+    categoriaP = request.POST['categoria']
 
 
     
@@ -193,7 +199,7 @@ def agregarProducto(request):
                            categoria = categoriaP)
 
     messages.success(request,"Producto agregado correctamente!")
-    return redirect('registro')
+    return redirect('adminProductos')
 
 
 def menu_on (request):
@@ -203,7 +209,17 @@ def menu_on (request):
 def mapa_off (request):
     return render (request, 'pcracks/mapaOFF.html')
 
+def contacto (request):
+    emailC =  request.POST['email']
+    nombreC = request.POST['nombre']
+    mensajeC = request.POST['message']
+
+    Contacto.objects.create(correo= emailC ,nombre = nombreC, mensaje=mensajeC
+                           )
+    return redirect('mapa_on')
+
 def mapa_on (request):
+
     return render (request, 'pcracks/mapaON.html')
 
 def login (request):
@@ -240,7 +256,11 @@ def recuperarContrasena (request):
     return render (request, 'pcracks/recuperarContrasena.html')
 
 def menu_off_productos (request):
-    return render (request, 'pcracks/menuOFFproductos.html')
+    productos = Producto.objects.all()
+    contexto ={
+        "listaProducto": productos
+    }
+    return render (request, 'pcracks/menuOFFproductos.html', contexto)
 
 def menu_on_productos (request):
     productos = Producto.objects.all()

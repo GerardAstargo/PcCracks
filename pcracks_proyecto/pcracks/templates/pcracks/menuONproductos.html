@@ -4,28 +4,30 @@
   
   
       {% block menu %}
-        {% for m in listaProducto %}
+      <h1 class="">.</h1>
   <DIV class="almacen">
-    <h1 class="">.</h1>
-    
     <div class="productos">
     
-      <div class="card">
-          <div class="imgBox">
-            <h1 class="">{{ m.categoria }}</h1>
-          </div>
-        
-          <div class="contentBox">
-            <h1>{{ m.marca }}</h1>
-            <h3>{{ m.modelo }}</h3>
-            <h2 class="price">$ {{ m.precio }}</h2>
-            <a href="/PCCRACKS/carrito.html" class="buy">Agregar al Carrito</a>
-            <a href="{% url 'comprar' m.cod_producto %}" class="buy">comprar ahora</a>
-          </div>
-      </div>
+    {% for m in listaProducto %}
+      
+        <div class="card">
+          
+            <div class="imgBox">
+              <h1 class="letra">{{ m.categoria }}</h1>
+            </div>
+          
+            <div class="contentBox">
+              <h1>{{ m.marca }}</h1>
+              <h3>{{ m.modelo }}</h3>
+              <h2 class="price">$ {{ m.precio }}</h2>
+              <a href="{% url 'comprar' m.cod_producto %}" class="buy">comprar ahora</a>
+            </div>
+            
+        </div>
+    {% endfor %}
     </div>
     
   </DIV>
-      {% endfor %}
+      
 
     {% endblock menu %}

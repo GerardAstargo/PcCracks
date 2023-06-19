@@ -12,7 +12,7 @@
             <div class="details">
               <div class="topic">Descripcion</div>
               <p>
-                {{ Producto.marca }}
+                {{ listaProducto.descripcion }}
               </p>
               <div class="rating">
                 <i class="fas fa-star"></i>
@@ -23,7 +23,7 @@
 
               </div>
                 <div class="price-box">
-                  <div class="price">$ {{ m.precio }}</div>
+                  <div class="price">$ {{ listaProducto.precio }}</div>
                 </div>
             </div>
             <div class="button1">
@@ -33,13 +33,13 @@
           <div class="box two">
             <div class="image-box">
               <div class="image">
-              <img src="/PCCRACKS/FOTOPRODUCTO/CPU/i511th.PNG" alt="">
+
               </div>
               <div class="info">
-                <div class="brand"> {{ Producto.marca }}</div>
-                <div class="name">{{ m.modelo }}</div>
+                <div class="brand"> {{ listaProducto.marca }}</div>
+                <div class="name">{{ listaProducto.modelo }}</div>
                 <div class="shipping">RETIRO EN TIENDA</div>
-                <div class="stock">{{ m.disponibilidad }} Disponibles</div>
+                <div class="stock">{{ listaProducto.disponibilidad }} Disponibles</div>
               </div>
             </div>
           </div>

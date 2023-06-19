@@ -46,8 +46,9 @@
         </section>
         <div>
 
-                
-                <a class="btn btn-default btn-sm" href="{% url 'modificarProducto' m.cod_producto %}"><i class="fa fa-unlock"></i> Hacer Administrador</a>
+            <a class="btn btn-danger" href="{% url 'eliminarProducto' m.cod_producto %}"><i class="fa fa-trash-o fa-fw "></i></a>
+
+            <a class="btn btn-default btn-sm" href="{% url 'modificarProducto' m.cod_producto %}"><i class="fa fa-sun-o" aria-hidden="true"></i></i> Modificar</a>
         </div>
 
         {% endfor %}

@@ -20,8 +20,10 @@
     {% if request.user.is_staff %}
     
         <header>
+
             <img src="{% static 'pcracks/fotos/logobarra.png'%}" alt="logo" width="200" height="170">
             <H1 CLASS="TITULO_ADMIN">Opciones De Administrador</H1>
+            <a href="{% url 'menu_on'%}" class="btn_login"><i class="fa fa-arrow-left" aria-hidden="true"></i>Volver</a>
             <div class="opcion_espacio">
             <a href="{% url 'adminProductos'%}" class="btn_opciones"><i class="fa fa-cog fa-spin fa-fw"></i>PRODUCTOS</a>
             </div>

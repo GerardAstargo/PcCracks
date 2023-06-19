@@ -24,7 +24,6 @@
     
     <H1 CLASS="TITULO_ADMIN">  <i class="fa fa-eject" aria-hidden="true"></i> Añadir Producto</H1>
     <a href="{% url 'administrar'%}" class="btn_login"><i class="fa fa-arrow-left" aria-hidden="true"></i>Volver</a>
-    <a href="{% url 'producto'%}" class="btn_login"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>Añadir producto</a>
 </header>
 
 <main>
@@ -32,83 +31,68 @@
 
     <form action="{% url 'agregarProducto' %}" method="POST" name="formulario" class="formulario" id="formulario">
 
-        
+        {% csrf_token %}
         <div class="formulario__grupo" id="grupo__rut">
             <label for="rut" class="formulario__label">Codigo</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="rut" id="rut" placeholder="Ej: 123456789" required>
+                <input type="text" class="formulario__input" name="codigo" id="codigo"  required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">El rut debe incluir digito verificador sin guion ni puntos</p>
         </div>
 
-        <!-- Grupo: Nombre -->
         <div class="formulario__grupo" id="grupo__nombre">
             <label for="Marca" class="formulario__label">Marca</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="marca" id="marca" placeholder="Primer nombre" required>
+                <input type="text" class="formulario__input" name="marca" id="marca"  required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">El nombre debe contener mas de 3 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
         </div>
 
-        <!-- Grupo: apellido -->
 
         <div class="formulario__grupo" id="grupo__apellido">
             <label for="modelo" class="formulario__label">Modelo</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="modelo" id="modelo" placeholder="Apellido paterno" required>
+                <input type="text" class="formulario__input" name="modelo" id="modelo"  required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">El apellido debe contener mas de 2 letras, sin espacios ni caracterteres especiales("@,#,-..").</p>
         </div>
 
-        <!-- Grupo: Correo Electronico -->
         <div class="formulario__grupo" id="grupo__correo">
             <label for="correo" class="formulario__label">Disponibilidad</label>
             <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" required>
+                <input type="text" class="formulario__input" name="disponibilidad" id="disponibilidad" required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
         </div>
 
-        <!-- Grupo: Contraseña -->
         <div class="formulario__grupo" id="grupo__password">
             <label for="password" class="formulario__label">Categoria</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="password" id="password" required>
+                <input type="text" class="formulario__input" name="categoria" id="categoria" required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">La contraseña tiene que ser de 8 a 20 caracteres.</p>
         </div>
 
         
 
-        <!-- Grupo: Teléfono -->
         <div class="formulario__grupo" id="grupo__telefono">
             <label for="telefono" class="formulario__label">Precio</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="12345678" required>
+                <input type="text" class="formulario__input" name="precio" id="precio" required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">El numero celular no debe contener +569 ni espacio y el total son 8 digitos</p>
         </div>
 
-        <!-- Grupo: direccion -->
         <div class="formulario__grupo" id="grupo__direccion">
             <label for="direccion" class="formulario__label">Descripcion</label>
             <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="####" required>
+                <input type="text" class="formulario__input" name="descripcion" id="descripcion"  required>
                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">Dirección debe tener un minimo de 13 letras y solo admite # y comas</p>
         </div>
 
-        <!-- Grupo: Terminos y Condiciones -->
 
         <div class="formulario__mensaje" id="formulario__mensaje">
-            <p><i class="fas fa-exclamation-triangle"></i> <b>Rellena todo el formulario</b> </p>
         </div>
 
         <div class="formulario__grupo formulario__grupo-btn-enviar">

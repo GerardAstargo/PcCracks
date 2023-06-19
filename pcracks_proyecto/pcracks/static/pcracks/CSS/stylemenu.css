@@ -858,7 +858,7 @@ footer img {
     left: 0;
     font-weight: 600;
     font-size: 420%;
-    color: rgba(87, 87, 87, 0.925);
+    color: rgba(110, 110, 110, 0.925);
   }
   
   .card .imgBox {
@@ -869,6 +869,11 @@ footer img {
     align-items: center;
     padding-top: 20px;
     z-index: 1;
+  }
+
+
+  .card .imgBox .letra {
+    color: var(--color_botones_primarios);
   }
 
 
@@ -901,7 +906,7 @@ footer img {
   
   .card .contentBox .price {
     font-size: 24px;
-    color: white;
+    color: var(--color_botones_primarios);
     font-weight: 700;
     letter-spacing: 1px;
   }

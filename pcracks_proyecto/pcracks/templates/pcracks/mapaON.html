@@ -16,17 +16,18 @@
                         </h4>
 
                 
-                <form class="contacto" action="" method="post" enctype="text/plain">
-                <label for="name">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <form class="contacto" action="{% url 'contacto' %}" method="POST" class="formulario">
+                    {% csrf_token %}
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
 
-                <input class="btn_login" type="submit" value="Enviar">
+                    <button type="submit" class="formulario__btn">Enviar</button>
                 
                 </form>
                 

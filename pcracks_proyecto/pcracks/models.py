@@ -62,7 +62,7 @@ class Foto (models.Model):
 
 #BASE CONTACTO
 class Contacto (models.Model):
-  correo = models.CharField(max_length=20)
+  correo = models.CharField(max_length=50)
   nombre = models.CharField(max_length=20)
   mensaje = models.CharField(max_length=300)
 

@@ -15,7 +15,7 @@ urlpatterns = [
     path('inicioSesion/', inicioSesion, name='inicioSesion'),
     path("logout/", logout_request, name="logout"),
     path('plantillaON/', plantillaON, name='plantillaON'),
-    
+    path('contacto/', contacto, name='contacto'),
     
 
 
@@ -28,9 +28,12 @@ urlpatterns = [
     path('cuentaoff/', cuentaoff, name='cuentaoff'),
     path('modificarCuenta/', modificarCuenta, name='modificarCuenta'),
     path('modificar/<id>',modificar,name="modificar"),
+    path('modificarProducto/<id>',modificarProducto,name="modificarProducto"),
+    path('modificarProductoadmin/',modificarProductoadmin,name="modificarProductoadmin"),
     path('comprar/<id>',comprar,name="comprar"),
     path('comprarProducto/', comprarProducto, name='comprarProducto'),
     path('eliminarUsuario/<id>',eliminarUsuario,name="eliminarUsuario"),
+    path('eliminarProducto/<id>',eliminarProducto,name="eliminarProducto"),
 
 
 
