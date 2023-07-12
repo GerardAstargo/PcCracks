@@ -1,0 +1,34 @@
+CMD:
+
+pip install cx_oracle
+
+-------------------------------------------------------------------------
+SQLPLUS:
+
+usuario: sys as sysdba
+contraseña: system
+
+alter session set"_ORACLE_SCRIPT"=True;
+
+create user pcracksngm identified by pcracks2023;
+
+grant connect, resource to pcracksngm;
+
+alter user pcracksngm default tablespace users quota unlimited on users;
+
+cambiar en setting del proyecto ir a DATABASE y cambiar si es ORCL o XE dependiendo de la version que tenga de ORACLE
+
+-------------------------------------------------------------------------
+TERMINAL DE VISUAL ESTUDIO:
+pip install pillow
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+
+
+python manage.py runserver
+
+-------------------------------------------------------------------------
+
