@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pcracks.context_processor.total_carrito',
             ],
         },
     },
@@ -141,9 +142,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'cc26de9bb10f05'
-EMAIL_HOST_PASSWORD = '78f9dbc98c38e6'
-EMAIL_PORT = '2525'
 
 LOGOUT_REDIRECT_URL = "menu_off"

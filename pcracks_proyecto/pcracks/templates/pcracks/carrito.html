@@ -1,23 +1,138 @@
-{% extends 'pcracks/zplantillaON.html' %}
-{% load static %}
+<!DOCTYPE html>
+    {% load static %}
+    <html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/2e83633af7.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Tienda tecnologica | pcCRACKS </title>
+        <link rel="stylesheet" href="{% static 'pcracks/css/stylemenu.css' %}">
+        <link rel="stylesheet" href="{% static 'pcracks/css/mapa.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'pcracks/fotos/logobarra.png'%}">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+        
+    </head>
 
+    <header>
+        <div class="menu_navegacion">
+            <div class="logo">
+                    <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="">
+            </div>
+            <div class="box">
+                <div class="container-1">
+                    
+                    <FORM action="/buscar/" method="GET">
+                    <input type="text" name="barra_buscar" id="search" placeholder="🔍︎ Busca tu producto aqui :)" >
+                </FORM>
+                    
+                </div>
+            </div>
+        
+            <div class="toggle">
+                |||
+            </div>
+            <div class="menu_opciones">
+                <nav class="nav">
+                    <ul class="opciones">
+                        <li><a href="{% url 'menu_on'%}">Inicio</a></li>
+                        <li><a href="{% url 'menu_on_productos'%}">Productos</a></li>
+                        <li><a href="{% url 'mapa_on'%}"><span class="icon"><i class="fa fa-map-marker"></i></span></a></li>
+                        <li><a href="{% url 'cuenta'%}"><span class="icon"><i class="fa fa-user"></i></span></a></li>
+                        <li><a href="{% url 'carritoCompra'%}"><span class="icon"><i class="fa fa-shopping-cart"></i></span></a></li>
+                    </ul>
+                </nav>
+                
+                
+                    <a href="{% url 'logout'%}" class="btn_login">Cerrar Sesión</a>
+                {% csrf_token %}
+                    {% if request.user.is_staff %}
+                        <a href="{% url 'administrar'%}" class="btn_login"><i class="fa fa-unlock" aria-hidden="true"></i></a>
+                    {% endif %}
+            </div>
+        </div>
 
-    {% block menu %}
+    </header>
 
+    <body>
 
     <DIv class="mantenimiento">
-        <div>
-        .
-        </div>
-        <div><h1><i class="fa fa-shopping-cart" aria-hidden="true"></i></h1></div>
-        <div>
-            <H2>EN MANTENIMIENTO<i class="fa fa-cogs" aria-hidden="true"></i></H2>
-        </div>
-        <P>El carrito de compras se encuentra en mantenimiento</P>
-        <h4>Solo se encuentra disponible "comprar ahora"</h4>
-        <i class="fa fa-battery-three-quarters" aria-hidden="true"></i>
+      
+        <div class="alert alert-primary" role="alert">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="row" colspan="3" class="text-center">CARRITO</th>
+                </tr>
+                <tr>
+                  <th scope="col">MARCA</th>
+                  <th scope="col">MODELO</th>
+                  <th scope="col">PRECIO</th>
+                  <th scope="col">CANTIDAD</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% if request.session.carrito.items %}
+              {% for key, value in request.session.carrito.items %}
+                <tr>
+                  <td>{{value.marca}}</td>
+                  <td>{{value.modelo}}</td>
+                  <td>{{value.precio}}</td>
+                  <td>{{value.acumulado}}
+                    <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark">+</a>
+                    <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark">-</a>
+                  </td>
+                </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
+                  <td colspan="3">
+                      <div class="alert alert-danger text-center"> Sin Productos </div>
+                  </td>
+              </tr>
+              {% endif %}
+                <tr>
+                  <th scope="row">Total:</th>
+                  <td colspan="2">$ {{total_carrito}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            </div>
+            <div class="row text-center">
+                <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger">Limpiar</a></div>
+                <div class="col-6"><a href="#" class="btn btn-success">Guardar</a></div>
+            </div>
 
+    </div>
+    
+    
+    <footer>
+      <section class="contact-area" >
+          <div class="piedepagina">
+                      <div class="contact-content">
+                          <a href="#"><img src="{% static 'pcracks/fotos/logobarra.png'%}" class="logofoteer" ></a>
+                          <p>Pagina web de ventas de componentes de computador</p>
+                          <div class="hr"></div>
+                          <h6>Sta. Elena de Huechuraba 1660, 8600036 Huechuraba, Región Metropolitana</h6>
+                          
+                          <h6>+56 9 3720 3451<span>|</span>+56 9 1234 5678</h6>
+                      </div>
+                      <p>Copyright &copy; 2023 <img src="{% static 'pcracks/fotos/logologin.png'%}" alt="logo"> Todos los derechos reservados.</p>
 
-    </DIv>
+          </div>
+          
+      </section>
 
-    {% endblock menu %}
+    </footer>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'pcracks/js/verificacion_registro.js'%}"></script>
+<script src="{% static 'pcracks/js/menuchico.js'%}"></script>
+</body>
+
+</html>

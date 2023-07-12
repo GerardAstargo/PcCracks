@@ -37,14 +37,13 @@ urlpatterns = [
 
 
 
-    path('carrito/', carrito, name='carrito'),
     path('registro/', registro, name='registro'),
     path('producto/', producto, name='producto'),
     path('agregarCliente/',agregarCliente,name="agregarCliente"),
     path('agregarProducto/',agregarProducto,name="agregarProducto"),
 
 
-    
+    path('carritoCompra/', carritoCompra, name='carritoCompra'),
     
     path('menuFastONRam/', menu_fast_on_ram, name='menu_fast_on_ram'),
     path('menuFastONProcesador/', menu_fast_on_procesador, name='menu_fast_on_procesador'),

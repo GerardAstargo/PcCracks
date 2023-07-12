@@ -7,6 +7,7 @@ from django.contrib.auth.hashers import check_password
 from django.contrib.auth import authenticate,login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import AnonymousUser 
+from pcracks.CarritoConf import Carrito
 
 
 
@@ -308,8 +309,38 @@ def cuenta (request):
 def cuentaoff (request):
    return render (request, 'pcracks/cuentaoff.html')
 
-def carrito (request):
-    return render (request, 'pcracks/carrito.html')
+
+
+def agregar_producto_carrito(request, id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(cod_producto = id)
+    carrito.agregar(producto)
+    return redirect("carritoCompra")
+
+def eliminar_producto_carrito(request, id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(cod_producto = id)
+    carrito.eliminar(producto)
+    return redirect("carritoCompra")
+
+def restar_producto_carrito(request, id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(cod_producto = id)
+    carrito.restar(producto)
+    return redirect("carritoCompra")
+
+def limpiar_carrito (request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("carritoCompra")
+
+def carritoCompra (request):
+    productos = Producto.objects.all()
+    contexto ={
+        "listaProducto": productos
+    }
+
+    return render (request, 'pcracks/carrito.html',contexto)
 
 
 

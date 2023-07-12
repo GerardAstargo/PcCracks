@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from pcracks import views
+from pcracks import views 
+from pcracks.views import agregar_producto_carrito,eliminar_producto_carrito,restar_producto_carrito,limpiar_carrito
 
 
 urlpatterns = [
@@ -25,6 +26,12 @@ urlpatterns = [
     path('',include('pcracks.urls')),
     path('buscar/',views.buscar),
     path('api/', include('api_rest.urls')),
+    path('agregar/<id>', agregar_producto_carrito, name="Add"),
+    path('eliminar/<id>', eliminar_producto_carrito, name="Del"),
+    path('restar/<id>', restar_producto_carrito, name="Sub"),
+    path('limpiar/', limpiar_carrito, name="CLS"),
+
+
     
 ]
 

@@ -44,6 +44,9 @@ class Producto (models.Model):
   precio = models.IntegerField(verbose_name="$")
   categoria = models.CharField(max_length=20)
 
+  def __str__(self):
+    return f'{self.modelo} -> {self.precio}'
+
   """def __str__(self):
     return self.cod_producto,self.categoria,self.marca, self.modelo, self.precio, self.disponibilidad
 

@@ -21,12 +21,14 @@
               <h3>{{ m.modelo }}</h3>
               <h2 class="price">$ {{ m.precio }}</h2>
               <a href="{% url 'comprar' m.cod_producto %}" class="buy">comprar ahora</a>
+              <a href="{% url 'Add' m.cod_producto %}" class="buy">Agregar al Carrito</a>
+
             </div>
             
         </div>
     {% endfor %}
     </div>
-    
+
   </DIV>
       
 
